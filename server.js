@@ -14,6 +14,10 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
+
+require("./routes/htmlRoutes.js")(app);
+
+
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
