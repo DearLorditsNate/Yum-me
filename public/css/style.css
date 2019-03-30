@@ -1,0 +1,9 @@
+.root-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.login-buttons {
+    margin: 10px;
+}

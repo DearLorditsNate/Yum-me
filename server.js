@@ -14,16 +14,10 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-<<<<<<< HEAD
-
-require("./routes/htmlRoutes.js")(app);
-
-=======
 // Routes
 // require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
+require("./routes/htmlRoutes")(app);
 require("./routes/apiCalls")(app);
->>>>>>> master
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));

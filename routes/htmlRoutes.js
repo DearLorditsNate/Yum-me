@@ -1,11 +1,10 @@
-var path = require('path');
+// Install/require dependencies
+// const path = require("path");
+var express = require("express")
+var exphbs = require("express-handlebars");
 
 module.exports = function(app) {
-    app.get("/", function(req, res) {
-      res.sendFile(path.join(__dirname, "../public/view.html"));
+    app.get('/login', function(req,res) {
+        res.render('index');
     });
-
-    app.get("/yee", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/yee.html"));
-      });
 }
