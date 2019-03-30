@@ -6,12 +6,19 @@ var proteinSearch = "steak";
 var vegetableSearch = "brocolli";
 var healthOptionsArray;
 
-axios.get("https://api.edamam.com/search?app_id=d6442f57&app_key=69127160173cd4569256538b60dfbc9c&q=steak").then(function(response) {
+axios
+  .get(
+    "https://api.edamam.com/search?app_id=" +
+      keys.edamam.id +
+      "&app_key=" +
+      keys.edamam.key +
+      "&q=steak"
+  )
+  .then(function(response) {
     for (var i = 0; i < 5; i++) {
-        console.log(response.data.hits[i]);
+      console.log(response.data.hits[i]);
     }
-    console.log(keys.edamam.id);
-});
+  });
 
 // $.ajax({
 //     url: "https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?app_id=" + keys.edamam.id + "&app_key=" + keys.edamam.key + "&q=" + proteinSearch + "," + vegetableSearch + healthOptionsArray,
