@@ -1,3 +1,81 @@
+body {
+    font-family: "Gravitas One", cursive;
+    background-image: url("../images/ingredients.jpg");
+    background-image: no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 100%;
+    z-index: -1;
+};
+
+.home-page-text-container {
+    z-index: 1;
+}
+
+#nav-container {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-right {
+    float: right;
+}
+
+.nav-left, .nav-right {
+    padding: 0px;
+    list-style: none;
+    display: inline-flex;
+    font-size: 20px;
+}
+
+.nav-link {
+    color:#4cacbf
+}
+
+.nav-item > a:hover {
+    color: #BCCECE;
+}
+
+.card-body {
+    margin: 200px;
+}
+
+.card {
+    background-color: transparent;
+}
+
+h2.card-title {
+    font-size: 50px;
+}
+
+h4.card-text {
+    padding: 10px;
+}
+
+h2.card-title, h4.card-text, .footer-text {
+    color: white;
+}
+
+.btn-info {
+    padding: 15px;
+}
+
+.footer {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.footer-text{
+    padding-top: 10px;
+}
+
+
 .root-div {
     display: flex;
     flex-direction: row;
