@@ -1,5 +1,17 @@
+/* .parallax {
+    background-image: url("../images/blueberries-background.jpeg"); */
+ /* Set a specific height */
+ /* height: 500px;  */
+
+ /* Create the parallax scrolling effect */
+ /* background-attachment: fixed;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+} */
+
 body {
-    background-image: url("../images/rosemary-lemon-ingredients.jpeg");
+    background-image: url("../images/blueberries-background.jpeg");
     background-image: no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -8,7 +20,6 @@ body {
     max-width: 100%;
     z-index: -1;
     font-family: 'Josefin Sans', sans-serif;
-    
 };
 
 .container {
@@ -18,17 +29,18 @@ body {
 
 #nav-container, footer {
     font-family: 'Amatic SC', cursive;
+    background-color: #EFEAEC;
+    opacity: 0.6;
 }
 
 /* Nav Bar */
 
 #nav-container {
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 1;
-    background-color: aliceblue;
-    opacity: 0.6;
     height: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .nav-right {
@@ -43,13 +55,25 @@ body {
 }
 
 .nav-link {
-    color:#4cacbf
+    color: #6CA4DC
 }
 
 .nav-item > a:hover {
-    color: #BCCECE;
+    color: #2F3F67;
 }
 
+.nav-item > a:active {
+    
+    color: #EFEAEC
+}
+
+/* Home page view */
+#home-container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    color: #2F3F67;
+    margin-top: 30px;
+}
 
 /* Views: Login, Profile, Start-Search */
 .centered {
@@ -62,6 +86,9 @@ body {
 
 .login-buttons {
     margin: 10px;
+    background-color: #6CA4DC;
+    color: white;
+
 }
 
 .landing-column {
@@ -72,6 +99,21 @@ body {
 
 .landing-row {
     justify-content: center;
+}
+
+/* Modal Styling */
+
+h5 {
+    font-weight: bolder;
+}
+
+.modal-header, .modal-body {
+    color: #2F3F67;
+}
+
+.home-buttons {
+    background-color: #6CA4DC;
+    color: white;
 }
 
 /* Favorites and Search Results View */
@@ -119,8 +161,9 @@ hr {
     text-align: center;
     bottom: 0;
     width: 100%;
-    background-color: aliceblue;
-    opacity: 0.6;
+    /* background-color: #EFEAEC;
+    opacity: 0.6; */
     padding: 10px;
+    color: #6CA4DC;
+    box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
