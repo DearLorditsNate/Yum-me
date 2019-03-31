@@ -183,6 +183,23 @@ hr {
     text-align: center;
 }
 
+/* Logout Styling */
+
+#logout-div {
+    position: absolute;
+    top: 79%;
+    right: 4%;
+}
+
+#logout-greeting {
+    color: #2F3F67;
+    font-style: italic
+}
+
+#successful-logout {
+    color: #9099B3
+}
+
 /* FOOTER */
 
 .footer {

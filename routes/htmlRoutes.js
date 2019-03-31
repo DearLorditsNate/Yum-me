@@ -24,4 +24,8 @@ module.exports = function(app) {
         res.render('favorites');
     });
 
+    app.get('/profile/logout', function(req,res) {
+        res.render('logout');
+    });
+
 }
