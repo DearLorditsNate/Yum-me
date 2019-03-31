@@ -19,4 +19,8 @@ module.exports = function(app) {
     app.get('/profile/favorites', function(req,res) {
         res.render('favorites');
     });
+
+    app.get('/profile/search', function(req,res) {
+        res.render('search');
+    });
 }
