@@ -15,4 +15,8 @@ module.exports = function(app) {
     app.get('/profile/newuser', function(req,res) {
         res.render('newUser');
     });
+
+    app.get('/profile/favorites', function(req,res) {
+        res.render('favorites');
+    });
 }
