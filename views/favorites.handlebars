@@ -1,3 +1,14 @@
+{{!-- VIEW FULL RECIPE MODAL --}}
+<div class="modal fade" id="viewFull" tabindex="-1" role="dialog" aria-labelledby="viewFullLabel" aria-hidden="true">
+    <div class="modal-dialog modal-body" id="view-full-body" role="document">
+        <div class="modal-content" id="view-full-content">
+            <div class="container-fluid">
+                <div id="view-full-container"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {{!-- HEADING/QUOTE CARD --}}
 <div class="card">
     <div class="card-header">
@@ -20,7 +31,7 @@
                 <h5 class="card-title">'Recipe Name'</h5>
             </div>
             <div class="card-body card-body-links">
-                <a href="#" class="card-link">View Full</a><br>
+                <a href="#" class="card-link" data-toggle="modal" data-target="#viewFull">View Full</a><br>
                 <a href="#" class="card-link">Edit/Comment</a><br>
                 <a href="#" class="card-link">Delete</a>
             </div>

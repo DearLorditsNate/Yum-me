@@ -103,18 +103,36 @@ body {
 
 /* Modal Styling */
 
-h5 {
-    font-weight: bolder;
-}
+    /* Login Page */
+    h5 {
+        font-weight: bolder;
+    }
 
-.modal-header, .modal-body {
-    color: #2F3F67;
-}
+    .modal-header, .modal-body {
+        color: #2F3F67;
+    }
 
-.home-buttons {
-    background-color: #6CA4DC;
-    color: white;
-}
+    .home-buttons {
+        background-color: #6CA4DC;
+        color: white;
+    }
+
+    /* Full Recipe View */
+
+    #view-full-body {
+        background-image: url("../images/calligraphy.jpeg");
+        width: 75%;
+        margin: 0 auto;
+    
+     }
+
+     #view-full-content {
+         opacity: 0;
+     }
+
+     #view-full-container {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     }
 
 /* Favorites and Search Results View */
 .card-header {
