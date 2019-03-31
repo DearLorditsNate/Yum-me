@@ -12,8 +12,7 @@
 
 body {
     background-image: url("../images/blueberries-background.jpeg");
-    background-image: no-repeat center center fixed; 
-    -webkit-background-size: cover;
+    background-repeat: no-repeat;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
@@ -55,7 +54,8 @@ body {
 }
 
 .nav-link {
-    color: #6CA4DC
+    color: #6CA4DC;
+    font-weight: bold;
 }
 
 .nav-item > a:hover {
@@ -69,10 +69,17 @@ body {
 
 /* Home page view */
 #home-container {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     color: #2F3F67;
-    margin-top: 30px;
+    margin-top: 125px;
+}
+
+#home-title-style {
+    font-size: 65px;
+}
+
+.h5.header {
+    font-size: 45px;
 }
 
 /* Views: Login, Profile, Start-Search */
@@ -118,8 +125,16 @@ h5 {
 
 /* Favorites and Search Results View */
 .card-header {
-    background-color: black;
+    background-color:#2F4069;
     color: whitesmoke
+}
+
+#card-header-style {
+    font-size: 25px;
+}
+
+#quote-styling, #quote-footer {
+   color:  #7B6663;
 }
 
 #quote-footer {
@@ -139,8 +154,9 @@ hr {
 
 .recipe-result-cards {
     margin: 5px;
-    border: 2px solid grey;
+    border: 2px solid #2F4069;
 }
+
 
 .card-img-top {
     height: 250px;
@@ -149,9 +165,22 @@ hr {
 .card-body-links {
     text-align: center;
 }
+            
+.card-body-links > a:hover {
+    color: #2F4069;
+}
 
-.card-link {
-    color:#4cacbf 
+.card-link, .card-title {
+    color: #7B6663;
+}
+
+.card-title {
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.card-title {
+    text-align: center;
 }
 
 /* FOOTER */
