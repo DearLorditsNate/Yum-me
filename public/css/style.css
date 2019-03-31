@@ -127,18 +127,56 @@ body {
     /* Full Recipe View */
 
     #view-full-body {
-        background-image: url("../images/calligraphy.jpeg");
+        background-image: url("../images/rustic-kitchen.jpeg");
         max-width: 75%;
         border-radius: 15px;
-        height: 90%;
         /* overflow: auto; */
      }
 
      #view-full-content {
         border: none;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0, 0.19);
+        background-color: rgba(255, 255, 255, 0.6);
+        height: 100%;
     }
+
+    #full-view-heading {
+        display: flex;
+        justify-content: center
+    }
+    
+    #full-view-image {
+        height: 250px;
+        border-radius: 15px;
+        border: 2px solid #EFEAEC;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #full-view-img-row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .modify-recipe-button {
+        background-color: #EFEAEC;
+        margin: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    h6 {
+        font-weight: bolder
+    }
+
+    #full-view-ingredient-col {
+
+    }
+
+    #update-recipe-button-col {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
 
 /* Favorites and Search Results View */
 .card-header {
@@ -146,16 +184,17 @@ body {
     color: whitesmoke
 }
 
-#card-header-style {
+.card-header-style {
     font-size: 25px;
 }
 
-#quote-styling, #quote-footer {
+.quote-styling {
    color:  #7B6663;
 }
 
-#quote-footer {
+.quote-footer {
     float: right;
+    color:  #7B6663;
 }
 
 hr {
