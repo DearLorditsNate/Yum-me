@@ -88,6 +88,21 @@ body {
     justify-content: center;
 }
 
+/* Modal Styling */
+
+h5 {
+    font-weight: bolder;
+}
+
+.modal-header, .modal-body {
+    color: #2F3F67;
+}
+
+.home-buttons {
+    background-color: #6CA4DC;
+    color: white;
+}
+
 /* Favorites and Search Results View */
 .card-header {
     background-color: black;
