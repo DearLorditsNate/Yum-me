@@ -13,7 +13,7 @@ body {
 
 .container {
     z-index: 1;
-    
+    overflow: auto;
 }
 
 #nav-container, footer {
@@ -26,6 +26,9 @@ body {
     position: absolute;
     width: 100%;
     z-index: 1;
+    background-color: aliceblue;
+    opacity: 0.6;
+    height: 50px;
 }
 
 .nav-right {
@@ -48,7 +51,7 @@ body {
 }
 
 
-/* Views: Login, Profile, Start- Search */
+/* Views: Login, Profile, Start-Search */
 .centered {
     position: fixed;
     top: 50%;
@@ -71,6 +74,44 @@ body {
     justify-content: center;
 }
 
+/* Favorites and Search Results View */
+.card-header {
+    background-color: black;
+    color: whitesmoke
+}
+
+#quote-footer {
+    float: right;
+}
+
+hr {
+    margin: 10px;
+}
+
+.recipe-results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.recipe-result-cards {
+    margin: 5px;
+    border: 2px solid grey;
+}
+
+.card-img-top {
+    height: 250px;
+}
+
+.card-body-links {
+    text-align: center;
+}
+
+.card-link {
+    color:#4cacbf 
+}
+
 /* FOOTER */
 
 .footer {
@@ -78,7 +119,8 @@ body {
     text-align: center;
     bottom: 0;
     width: 100%;
-    height: 50px;
-    color:white;
+    background-color: aliceblue;
+    opacity: 0.6;
+    padding: 10px;
 }
 
