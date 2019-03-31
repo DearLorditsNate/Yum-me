@@ -1,3 +1,15 @@
+/* .parallax {
+    background-image: url("../images/blueberries-background.jpeg"); */
+ /* Set a specific height */
+ /* height: 500px;  */
+
+ /* Create the parallax scrolling effect */
+ /* background-attachment: fixed;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+} */
+
 body {
     background-image: url("../images/blueberries-background.jpeg");
     background-image: no-repeat center center fixed; 
@@ -8,7 +20,6 @@ body {
     max-width: 100%;
     z-index: -1;
     font-family: 'Josefin Sans', sans-serif;
-    
 };
 
 .container {
@@ -18,12 +29,14 @@ body {
 
 #nav-container, footer {
     font-family: 'Amatic SC', cursive;
+    background-color: #EFEAEC;
+    opacity: 0.6;
 }
 
 /* Nav Bar */
 
 #nav-container {
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 1;
     height: 50px;
@@ -153,9 +166,4 @@ hr {
     padding: 10px;
     color: #6CA4DC;
     box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.footer, #nav-container {
-    background-color: #EFEAEC;
-    opacity: 0.6;
 }
