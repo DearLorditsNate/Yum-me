@@ -7,4 +7,8 @@ module.exports = function(app) {
     app.get('/login', function(req,res) {
         res.render('index');
     });
+
+    app.get('/profile/user', function(req,res) {
+        res.render('profile');
+    });
 }
