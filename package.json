@@ -18,6 +18,7 @@
   "homepage": "https://github.com/DearLorditsNate/Yum-me#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
