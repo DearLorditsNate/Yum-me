@@ -205,6 +205,14 @@ body {
     
 
 /* Favorites and Search Results View */
+#recipe-search {
+    margin-top: 1rem
+}
+
+#search-button {
+    float: right;
+}
+
 .card-header {
     background-color:#2F4069;
     color: whitesmoke
