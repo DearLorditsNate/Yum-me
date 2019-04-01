@@ -127,7 +127,7 @@ body {
     /* Full Recipe View */
 
     #view-full-body {
-        background-image: url("../images/rustic-kitchen.jpeg");
+        background-image: url("../images/orange-bottom-right.jpeg");
         max-width: 75%;
         border-radius: 15px;
         /* overflow: auto; */
@@ -138,6 +138,7 @@ body {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0, 0.19);
         background-color: rgba(255, 255, 255, 0.6);
         height: 100%;
+        padding: 20px;
     }
 
     #full-view-heading {
@@ -155,6 +156,7 @@ body {
     #full-view-img-row {
         display: flex;
         justify-content: center;
+        margin: 10px;
     }
 
     .modify-recipe-button {
@@ -167,14 +169,37 @@ body {
         font-weight: bolder
     }
 
-    #full-view-ingredient-col {
+    #full-view-comments-row {
+        max-height: 200px;
+        overflow: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 10px;
+    }
 
+    #full-view-ingredient-col, #full-view-comments-col {
+        margin: 10px 0px 0px 20px;
+    }
+
+    #full-view-instructions-col {
+        margin-top: 10px
+    }
+
+    .full-view-content-font {
+        font-family: 'Bad Script', cursive;
     }
 
     #update-recipe-button-col {
-        justify-content: center;
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column
+    }
+
+    .update-recipe-button-rows {
+        justify-content: center
+    }
+
+    li {
+        line-height: 1.6;
     }
     
 

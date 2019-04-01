@@ -3,24 +3,26 @@
     <div class="modal-dialog modal-body" id="view-full-body" role="document">
         <div class="modal-content" id="view-full-content">
             <div class="container-fluid">
+                {{!-- HEADING ROW --}}
                 <div class="row" id="full-view-heading">
                     <h1>'Recipe Name'</h1>
                 </div>
                 <hr>
+                <div class="row" id="full-view-img-row">
+                    <img src="https://images.pexels.com/photos/890450/pexels-photo-890450.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                        alt="chocolate raspberry pudding" id="full-view-image">
+                </div>
+                {{!-- MAIN BODY ROW --}}
                 <div class="row">
+                    {{!-- RECIPE COLUMN --}}
                     <div class="col">
-                        <div class="row" id="full-view-img-row">
-                            {{!-- placeholder img --}}
-                            <img src="https://images.pexels.com/photos/890450/pexels-photo-890450.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                                alt="chocolate raspberry pudding" id="full-view-image">
-                        </div>
                         <div class="row">
                             {{!-- placeholder ingredients --}}
-                            <div class="col" id="full-view-ingredient-col">
+                            <div class="col-4" id="full-view-ingredient-col">
                                 <div class="row">
                                     <h6>Ingredients</h6>
                                 </div>
-                                <div class="row">
+                                <div class="row full-view-content-font">
                                     <ul>
                                         <li>Ingredient Name</li>
                                         <li>Ingredient Name</li>
@@ -34,55 +36,88 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            {{!-- instructions --}}
-                            <h6>Instructions</h6>
-                            <ol>
-                                <li>
-                                    Lorem ipsum dolor amet craft beer plaid meh tilde hexagon offal.
-                                </li>
-                                <li>
-                                    Flexitarian hashtag subway tile readymade, brunch vice organic lumbersexual
-                                    farm-to-table craft beer hammock cred swag butcher.
-                                </li>
-                                <li>
-                                    Scenester DIY flannel taiyaki pok pok echo park. Fanny pack forage literally +1
-                                    venmo photo booth woke semiotics fingerstache lomo distillery flexitarian taiyaki
-                                    seitan gentrify.
-                                </li>
-                                <li>
-                                    Scenester DIY flannel taiyaki pok pok echo park.
-                                </li>
-                                <li>
-                                    Umami keffiyeh iceland cliche vegan neutra fixie gluten-free kinfolk.
-                                </li>
-                            </ol>
+                            {{!-- COMMENTS COLUMN --}}
+                            <div class="col-7">
+                                <div class="row">
+                                    <div class="col" id="full-view-instructions-col">
+                                        {{!-- instructions --}}
+                                        <div class="row">
+                                            <h6>Instructions</h6>
+                                        </div>
+                                        <div class="row full-view-content-font">
+                                            <ol>
+                                                <li>
+                                                    Lorem ipsum dolor amet craft beer plaid meh tilde hexagon offal.
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Flexitarian hashtag subway tile readymade, brunch vice organic
+                                                    lumbersexual
+                                                    farm-to-table craft beer hammock cred swag butcher.
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Scenester DIY flannel taiyaki pok pok echo park. Fanny pack forage
+                                                    literally +1
+                                                    venmo photo booth woke semiotics fingerstache lomo distillery
+                                                    flexitarian
+                                                    taiyaki
+                                                    seitan gentrify.
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Scenester DIY flannel taiyaki pok pok echo park.
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Umami keffiyeh iceland cliche vegan neutra fixie gluten-free
+                                                    kinfolk.
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="row">
-                            {{!-- comments --}}
+                </div>
+                <div class="row">
                             <h6>Comments</h6>
+                        </div>
+                <div class="row" id="full-view-comments-row">
+                    
+                    <div class="col" id="full-view-comments-col">
+                        <div class="row full-view-content-font">
                             <p>
-                                Lorem ipsum dolor amet craft beer plaid meh tilde hexagon offal. Flexitarian hashtag
-                                subway tile readymade, brunch vice organic lumbersexual farm-to-table craft beer
-                                hammock cred swag butcher. Scenester DIY flannel taiyaki pok pok echo park. Fanny pack
-                                forage literally +1 venmo photo booth woke semiotics fingerstache lomo distillery
+                                Lorem ipsum dolor amet craft beer plaid meh tilde hexagon offal. Flexitarian
+                                hashtag
+                                subway tile readymade, brunch vice organic lumbersexual farm-to-table craft
+                                beer
+                                hammock cred swag butcher. Scenester DIY flannel taiyaki pok pok echo park.
+                                Fanny pack
+                                forage literally +1 venmo photo booth woke semiotics fingerstache lomo
+                                distillery
                                 flexitarian taiyaki seitan gentrify.
                             </p>
                             <p>
-                                Umami keffiyeh iceland cliche vegan neutra fixie gluten-free kinfolk. Meditation DIY
-                                selfies, tattooed keffiyeh helvetica subway tile try-hard pour-over kinfolk gochujang
+                                Umami keffiyeh iceland cliche vegan neutra fixie gluten-free kinfolk.
+                                Meditation DIY
+                                selfies, tattooed keffiyeh helvetica subway tile try-hard pour-over kinfolk
+                                gochujang
                                 chicharrones. Enamel pin PBR&B semiotics kogi lyft mustache readymade, salvia
-                                biodiesel. Pabst sartorial distillery, PBR&B banh mi freegan master cleanse la croix.
-                                Mlkshk vape taxidermy authentic readymade fingerstache. Selvage forage venmo 90's,
+                                biodiesel. Pabst sartorial distillery, PBR&B banh mi freegan master cleanse la
+                                croix.
+                                Mlkshk vape taxidermy authentic readymade fingerstache. Selvage forage venmo
+                                90's,
                                 pinterest bushwick austin bitters gluten-free.
                             </p>
                             <p>
-                                Jianbing umami edison bulb put a bird on it locavore. Tattooed green juice skateboard
-                                affogato woke, echo park hella austin lo-fi synth poutine thundercats helvetica squid.
-                                Small batch migas hexagon meggings forage asymmetrical. Artisan succulents knausgaard
+                                Jianbing umami edison bulb put a bird on it locavore. Tattooed green juice
+                                skateboard
+                                affogato woke, echo park hella austin lo-fi synth poutine thundercats helvetica
+                                squid.
+                                Small batch migas hexagon meggings forage asymmetrical. Artisan succulents
+                                knausgaard
                                 shoreditch vice snackwave mustache.
                             </p>
                             <p>
@@ -92,19 +127,21 @@
                                 I bet you’re still using Bootstrap too…
                             </p>
                         </div>
-                        <div class="row">
-                            <div class="col" id="update-recipe-button-col">
-                                <div class="row">
-                                    <h6><em>Make it your own!</em></h6>
-                                </div>
-                                <div class="row">
-                                    <button type="button" class="btn btn-sm modify-recipe-button" class="">Update
-                                        Instructions</button>
-                                    <button type="button" class="btn btn-sm modify-recipe-button" class="">Update
-                                        Ingredients</button>
-                                    <button type="button" class="btn btn-sm modify-recipe-button" class="">Add Comment</button>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <hr>
+                {{!-- FOOTER ROW --}}
+                <div class="row">
+                    <div class="col" id="update-recipe-button-col">
+                        <div class="row update-recipe-button-rows">
+                            <h6><em>Make it your own!</em></h6>
+                        </div>
+                        <div class="row update-recipe-button-rows">
+                            <button type="button" class="btn btn-sm modify-recipe-button" class="">Update
+                                Instructions</button>
+                            <button type="button" class="btn btn-sm modify-recipe-button" class="">Update
+                                Ingredients</button>
+                            <button type="button" class="btn btn-sm modify-recipe-button" class="">Add Comment</button>
                         </div>
                     </div>
                 </div>
