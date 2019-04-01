@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     $('#log-out').on('click', e => {
         firebase.auth().signOut();
-    })
+    });
 
     //
     firebase.auth().onAuthStateChanged(function (user) {
