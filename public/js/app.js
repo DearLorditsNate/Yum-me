@@ -12,7 +12,6 @@ firebase.initializeApp(config);
 
 $(document).ready(function () {
 
-
     //event listeners
     $('#login').on('click', e => {
         //grab dom elements
