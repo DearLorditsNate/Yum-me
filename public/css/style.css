@@ -191,7 +191,8 @@ body {
     #update-recipe-button-col {
         display: flex;
         flex-wrap: wrap;
-        flex-direction: column
+        flex-direction: column;
+        margin-top: 9%;
     }
 
     .update-recipe-button-rows {

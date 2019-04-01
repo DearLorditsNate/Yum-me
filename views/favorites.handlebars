@@ -9,9 +9,24 @@
                 </div>
                 <hr>
                 <div class="row" id="full-view-img-row">
-                    <img src="https://images.pexels.com/photos/890450/pexels-photo-890450.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="chocolate raspberry pudding" id="full-view-image">
+                    <div class="col">
+                        <img src="https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                        alt="placeholder" id="full-view-image">
+                    </div>
+                    <div class="col" id="update-recipe-button-col">
+                        <div class="row update-recipe-button-rows">
+                            <h6><em>Make it your own!</em></h6>
+                        </div>
+                        <div class="row update-recipe-button-rows">
+                            <button type="button" class="btn btn-sm modify-recipe-button" class="">Update
+                                Instructions</button>
+                            <button type="button" class="btn btn-sm modify-recipe-button" class="">Update
+                                Ingredients</button>
+                            <button type="button" class="btn btn-sm modify-recipe-button" class="">Add Comment</button>
+                        </div>
+                    </div>
                 </div>
+            </div>
                 {{!-- MAIN BODY ROW --}}
                 <div class="row">
                     {{!-- RECIPE COLUMN --}}
@@ -81,9 +96,10 @@
                         </div>
                     </div>
                 </div>
+                {{!-- COMMENTS ROW --}}
                 <div class="row">
-                            <h6>Comments</h6>
-                        </div>
+                    <h6>Comments</h6>
+                </div>
                 <div class="row" id="full-view-comments-row">
                     
                     <div class="col" id="full-view-comments-col">
@@ -126,22 +142,6 @@
                             <p>
                                 I bet you’re still using Bootstrap too…
                             </p>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                {{!-- FOOTER ROW --}}
-                <div class="row">
-                    <div class="col" id="update-recipe-button-col">
-                        <div class="row update-recipe-button-rows">
-                            <h6><em>Make it your own!</em></h6>
-                        </div>
-                        <div class="row update-recipe-button-rows">
-                            <button type="button" class="btn btn-sm modify-recipe-button" class="">Update
-                                Instructions</button>
-                            <button type="button" class="btn btn-sm modify-recipe-button" class="">Update
-                                Ingredients</button>
-                            <button type="button" class="btn btn-sm modify-recipe-button" class="">Add Comment</button>
                         </div>
                     </div>
                 </div>
