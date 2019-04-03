@@ -10,7 +10,7 @@ module.exports = function (app) {
                 "https://www.themealdb.com/api/json/v1/1/search.php?s=" + req.query.search
             )
             .then(function (response) {
-                res.json(response.data);
+                res.render("search", response.data);
             });
     });
 }
