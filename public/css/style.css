@@ -26,6 +26,10 @@ body {
     overflow: auto;
 }
 
+.profile-container {
+    margin-bottom: 100px;
+}
+
 #nav-container, footer {
     font-family: 'Amatic SC', cursive;
     background-color: #EFEAEC;
@@ -209,6 +213,11 @@ body {
 
     li {
         line-height: 1.6;
+    }
+    
+    #recipe-results-footer {
+        justify-content: flex-end;
+        margin-right: 50px;
     }
     
 
