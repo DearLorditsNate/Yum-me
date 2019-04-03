@@ -16,7 +16,7 @@ module.exports = function(app){
     });
 
     // Get saved recipes
-    app.get('/api/saved', function(req, res) {
+    app.get('/profile/favorites', function(req, res) {
         db.Recipe.findAll({}).then(function(recipes) {
             console.log('recipes', recipes)
             // console.log('recipes', recipes[0].dataValues)
