@@ -4,6 +4,11 @@ var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+// Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
+
 // Handlebars
 var exphbs = require("express-handlebars");
 app.engine(
@@ -18,11 +23,6 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/apiCalls")(app);
-
-// Middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static("public"));
 
 var db = require('./models')
 
