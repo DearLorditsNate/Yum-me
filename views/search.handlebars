@@ -17,76 +17,17 @@
     {{!-- Placeholders for Recipe Favorites/Search Results--}}
     <div class="recipe-results" id="favorite-recipes">
         {{!-- CARD A --}}
+        {{#each recipes}}
         <div class="card recipe-result-cards" style="width: 18rem;">
-            <img class="card-img-top" src="https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="acai bowl">
+            <img class="card-img-top" src="{{this.strMealThumb}}" alt="{{this.strMeal}} recipe image">
             <div class="card-body">
-                <h5 class="card-title">'Recipe Name'</h5>
+                <h5 class="card-title">{{this.strMeal}}</h5>
             </div>
             <div class="card-body card-body-links">
                 <a href="#" class="card-link">View Full</a><br>
                 <a href="#" class="card-link">Save to Favorites</a><br>
             </div>
         </div>
-        {{!-- CARD B --}}
-        <div class="card recipe-result-cards" style="width: 18rem;">
-            <img class="card-img-top" src="https://images.pexels.com/photos/161573/background-water-breakfast-bright-161573.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="acai bowl">
-            <div class="card-body">
-                <h5 class="card-title">'Recipe Name'</h5>
-            </div>
-            <div class="card-body card-body-links">
-                 <a href="#" class="card-link">View Full</a><br>
-                <a href="#" class="card-link">Save to Favorites</a><br>
-            </div>
-        </div>
-        {{!-- CARD C --}}
-        <div class="card recipe-result-cards" style="width: 18rem;">
-            <img class="card-img-top" src="https://images.pexels.com/photos/1265910/pexels-photo-1265910.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="acai bowl">
-            <div class="card-body">
-                <h5 class="card-title">'Recipe Name'</h5>
-            </div>
-            <div class="card-body card-body-links">
-                 <a href="#" class="card-link">View Full</a><br>
-                <a href="#" class="card-link">Save to Favorites</a><br>
-            </div>
-        </div>
-        {{!-- CARD D --}}
-        <div class="card recipe-result-cards" style="width: 18rem;">
-            <img class="card-img-top" src="https://images.pexels.com/photos/1586529/pexels-photo-1586529.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="acai bowl">
-            <div class="card-body">
-                <h5 class="card-title">'Recipe Name'</h5>
-            </div>
-            <div class="card-body card-body-links">
-                 <a href="#" class="card-link">View Full</a><br>
-                <a href="#" class="card-link">Save to Favorites</a><br>
-            </div>
-        </div>
-        {{!-- CARD E --}}
-        <div class="card recipe-result-cards" style="width: 18rem;">
-            <img class="card-img-top" src="https://images.pexels.com/photos/531650/pexels-photo-531650.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="acai bowl">
-            <div class="card-body">
-                <h5 class="card-title">'Recipe Name'</h5>
-            </div>
-            <div class="card-body card-body-links">
-                 <a href="#" class="card-link">View Full</a><br>
-                <a href="#" class="card-link">Save to Favorites</a><br>
-            </div>
-        </div>
-        {{!-- CARD F --}}
-        <div class="card recipe-result-cards" style="width: 18rem;">
-            <img class="card-img-top" src="https://images.pexels.com/photos/532780/pexels-photo-532780.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="acai bowl">
-            <div class="card-body">
-                <h5 class="card-title">'Recipe Name'</h5>
-            </div>
-            <div class="card-body card-body-links">
-                 <a href="#" class="card-link">View Full</a><br>
-                <a href="#" class="card-link">Save to Favorites</a><br>
-            </div>
-        </div>
+        {{/each}}
     </div>
 </div>

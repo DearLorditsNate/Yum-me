@@ -10,7 +10,8 @@ module.exports = function (app) {
                 "https://www.themealdb.com/api/json/v1/1/search.php?s=" + req.query.search
             )
             .then(function (response) {
-                res.render("search", response.data);
+                var results = response.data.meals;
+                res.render('search', { recipes: results });
             });
     });
 }
