@@ -7,14 +7,6 @@ module.exports = function(app) {
     app.get('/home', function(req,res) {
         res.render('home');
     });
-    
-    app.get('/profile/user', function(req,res) {
-        res.render('profile');
-    });
-
-    app.get('/profile/newuser', function(req,res) {
-        res.render('newUser');
-    });
 
     app.get('/profile/search', function(req,res) {
         res.render('search');

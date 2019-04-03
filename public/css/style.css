@@ -165,15 +165,23 @@ body {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
+    #main-body-row {
+        margin: 20px 0 20px 0;
+    }
+
     h6 {
         font-weight: bolder
+    }
+
+    #full-view-comments-heading {
+        margin: 0 0 0 10px;
     }
 
     #full-view-comments-row {
         max-height: 200px;
         overflow: auto;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        padding: 10px;
+        margin: 0px 10px 0px 10px;
     }
 
     #full-view-ingredient-col, #full-view-comments-col {
