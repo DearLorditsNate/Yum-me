@@ -20,4 +20,7 @@ module.exports = function(app) {
         res.render('logout');
     });
 
+    app.get('/profile/about', function(req,res) {
+        res.render('about');
+    });
 }
