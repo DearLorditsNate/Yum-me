@@ -16,7 +16,7 @@ module.exports = function(app){
     });
 
     // Get saved recipes
-    app.get('/api/save', function(req, res) {
+    app.get('/api/saved', function(req, res) {
         db.Recipe.findAll({}).then(function(recipes) {
             res.json(recipes);
         });
