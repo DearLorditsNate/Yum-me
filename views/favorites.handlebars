@@ -135,28 +135,25 @@
         $button.text("Save Updates");
         $button.removeClass("update-recipe").addClass("save-updates");
 
-        var $input = $(".edit-input");
-        $input.attr('contenteditable');
+        var $input = $(".edit-input").attr('contenteditable');
             if ($input === "false") {
                 $(".edit-input").attr('contenteditable', 'true');
             }
-
-        $input.addClass("inline-edit-styling");
+        $(".edit-input").addClass("inline-edit-styling");
 
     });
 
     $(document).on('click','.save-updates', function() {
         var $button = $(".save-updates");
-        $button.text("Save Updates");
+        $button.text("Update Recipe");
         $button.removeClass("save-updates").addClass("update-recipe");
 
-        var $stopInput = $(".edit-input");
-        $stopInput.attr('contenteditable');
+        var $stopInput = $(".edit-input").attr('contenteditable');
             if ($stopInput === "true") {
                 $(".edit-input").attr('contenteditable', 'false');
             }
 
-        $stopInput.removeClass("inline-edit-styling");
+        $(".edit-input").removeClass("inline-edit-styling");
 
     });
 

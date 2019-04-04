@@ -226,6 +226,8 @@ body {
     .inline-edit-styling {
         box-shadow: 1px 1px 20px #9099B3 inset;
         background-color: aliceblue;
+        overflow: auto;
+        max-height: 400px;
     }
 
     #recipe-results-footer {
