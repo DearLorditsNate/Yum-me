@@ -22,7 +22,8 @@ module.exports = function(app) {
 
     app.get('/profile/create', function(req,res) {
         res.render('createRecipe');
-        
+    });
+     
     app.get('/profile/about', function(req,res) {
         res.render('about');
     });
