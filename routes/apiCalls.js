@@ -11,7 +11,11 @@ module.exports = function (app) {
             )
             .then(function (response) {
                 var results = response.data.meals;
-                res.render('search', { recipes: results });
+                if (results) {
+                    res.render('search', { recipes: results });
+                } else {
+                    res.render('noSearchResults');
+                }
             });
     });
 }
