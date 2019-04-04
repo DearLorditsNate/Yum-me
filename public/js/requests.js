@@ -28,6 +28,22 @@ $(document).ready(function () {
         });
     });
 
+    $("#create-recipe-button").on("click", function(event) {
+        event.preventDefault();
+        var data = {
+            name: $('#name').val(),
+            image: $('#photo').val(),
+            instructions: $('#instructions').val(),
+            ingredientName: $('#ingredients').val(),
+            ingredientMeasure: "something"
+        }
+
+        $.post('/api/save', data).then(function (response) {
+            console.log("Data logged to server");
+            console.log(response);
+        });
+    });
+
     $('.delete-fave').on('click', function(event) {
         event.preventDefault();
         var id = $(this).attr("data-id");
