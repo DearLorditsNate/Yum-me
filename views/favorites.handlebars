@@ -3,6 +3,7 @@
     <div class="card">
         <div class="card-header card-header-style">
             My Favorite Recipes
+            <a href="/profile/create" id="create-recipe"><h6>Create Your Own Recipe</h6></a>
             <div class="form-group">
                 <input class="form-control" id="recipe-search" placeholder="Search through your favorites!"></input>
                 <button type="button" class="btn login-buttons" id="search-button">Search</button>
@@ -32,6 +33,7 @@
                                 <div class="row" id="full-view-heading">
                                     <h1>{{dataValues.name}}</h1>
                                 </div>
+                                <p id="view-full-quote">"The first time you make something, follow the recipe, then figure out how to tailor it to your own tastes." ~ Ruth Reichl</p>
                                 <hr>
                                 <div class="row" id="full-view-img-row">
                                     <div class="col">
@@ -42,7 +44,7 @@
                                             <h6><em>Make it your own!</em></h6>
                                         </div>
                                         <div class="row update-recipe-button-rows">
-                                            <button type="button" class="btn btn-lg modify-recipe-button" class="">Update
+                                            <button type="button" class="btn btn-lg modify-recipe-button update-recipe">Update
                                                 Recipe</button>
                                         </div>
                                     </div>
@@ -58,10 +60,10 @@
                                             <div class="row">
                                                 <h6>Ingredients</h6>
                                             </div>
-                                            <div class="row full-view-content-font">
-                                                <ul>
-                                                    <li>{{dataValues.ingredientMeasure}} {{dataValues.ingredientName}}</li>
-                                                </ul>
+                                            <div class="row full-view-content-font edit-input" contenteditable="false" style="">
+                                                <p>
+                                                    {{dataValues.ingredientMeasure}} {{dataValues.ingredientName}}
+                                                </p>
                                             </div>
                                         </div>
                                         {{!-- COMMENTS COLUMN --}}
@@ -72,10 +74,10 @@
                                                     <div class="row">
                                                         <h6>Instructions</h6>
                                                     </div>
-                                                    <div class="row full-view-content-font">
-                                                        <ol>
+                                                    <div class="row full-view-content-font edit-input" contenteditable="false">
+                                                        <p>
                                                             {{dataValues.instructions}}
-                                                        </ol>
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -89,8 +91,8 @@
                             </div>
                             <div class="row" id="full-view-comments-row">
 
-                                <div class="col" id="full-view-comments-col">
-                                    <div class="row full-view-content-font">
+                                <div class="col">
+                                    <div class="row full-view-content-font edit-input" id="full-view-comments" contenteditable="false">
                                         <p>
                                             {{dataValues.recipeComments}}
                                         </p>
@@ -106,20 +108,56 @@
                     <h5 class="card-title">{{dataValues.name}}</h5>
                 </div>
                 <div class="card-body card-body-links">
-                    <a href="#" class="card-link" data-toggle="modal" data-target="#myModal{{dataValues.id}}"
-                        data-ingredients='{{dataValues.ingredientName}}' data-instructions='{{dataValues.instructions}}'
-                        data-comment='{{dataValues.comments}}'>View
-                        Full</a><br>
-                    <a href="#" class="card-link">Edit/Comment</a><br>
-                    <a href="#" class="card-link delete-fave" data-id={{dataValues.id}}>Delete</a>
+                    <a href="#" class="card-link" data-toggle="modal" data-target="#myModal{{dataValues.id}}">
+                        View
+                        Full
+                    </a>
+                    <br>
+                    <a href="#" class="card-link" data-id={{dataValues.id}}>Delete</a>
                 </div>
             </div>
             {{/each}}
         </div>
+        <hr>
+        <div class="recipe-results" id="recipe-results-footer">
+            <p>Next</p>
+        </div>
     </div>
-    <hr>
-    <div class="recipe-results" id="recipe-results-footer">
-        <p>Next</p>
-    </div>
+    
 </div>
 </div>
+
+<script>
+
+
+
+    $(document).on('click','.update-recipe', function() {
+        var $button = $(".update-recipe");
+        $button.text("Save Updates");
+        $button.removeClass("update-recipe").addClass("save-updates");
+
+        var $input = $(".edit-input").attr('contenteditable');
+            if ($input === "false") {
+                $(".edit-input").attr('contenteditable', 'true');
+            }
+        $(".edit-input").addClass("inline-edit-styling");
+
+    });
+
+    $(document).on('click','.save-updates', function() {
+        var $button = $(".save-updates");
+        $button.text("Update Recipe");
+        $button.removeClass("save-updates").addClass("update-recipe");
+
+        var $stopInput = $(".edit-input").attr('contenteditable');
+            if ($stopInput === "true") {
+                $(".edit-input").attr('contenteditable', 'false');
+            }
+
+        $(".edit-input").removeClass("inline-edit-styling");
+
+    });
+
+
+
+</script>
