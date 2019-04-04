@@ -3,6 +3,7 @@
     <div class="card">
         <div class="card-header card-header-style">
             My Favorite Recipes
+            <a href="/profile/create" id="create-recipe"><h6>Create Your Own Recipe</h6></a>
             <div class="form-group">
                 <input class="form-control" id="recipe-search" placeholder="Search through your favorites!"></input>
                 <button type="button" class="btn login-buttons" id="search-button">Search</button>
@@ -32,6 +33,7 @@
                                 <div class="row" id="full-view-heading">
                                     <h1>{{dataValues.name}}</h1>
                                 </div>
+                                <p id="view-full-quote">"The first time you make something, follow the recipe, then figure out how to tailor it to your own tastes." ~ Ruth Reichl</p>
                                 <hr>
                                 <div class="row" id="full-view-img-row">
                                     <div class="col">
@@ -111,7 +113,6 @@
                         Full
                     </a>
                     <br>
-                    <a href="#" class="card-link">Edit/Comment</a><br>
                     <a href="#" class="card-link" data-id={{dataValues.id}}>Delete</a>
                 </div>
             </div>

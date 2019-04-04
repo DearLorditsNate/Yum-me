@@ -128,7 +128,29 @@ body {
         color: white;
     }
 
+    /* Create Own Recipe */
+
+    #create-recipe {
+        color:#6CA4DC
+    }
+
+    #create-recipe-footer {
+        height: 2em;
+        background-color:#2F3F67;
+        opacity: 1;
+        border-radius: 0rem 0rem 0.25rem 0.25rem;
+    }
+
+    #create-recipe-button {
+        float: right
+    }
+
     /* Full Recipe View */
+
+    #view-full-quote {
+        text-align: center;
+        font-size: x-small;
+    }
 
     #view-full-body {
         background-image: url("../images/orange-bottom-right.jpeg");
