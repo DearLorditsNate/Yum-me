@@ -188,8 +188,12 @@ body {
         margin: 0px 10px 0px 10px;
     }
 
-    #full-view-ingredient-col, #full-view-comments-col {
-        margin: 10px 0px 0px 20px;
+    #full-view-ingredient-col {
+        margin: 10px 4px 0px 20px;
+    }
+
+    #full-view-comments {
+        padding: 10px;
     }
 
     #full-view-instructions-col {
@@ -211,10 +215,18 @@ body {
         justify-content: center
     }
 
-    li {
+    /* li {
         line-height: 1.6;
-    }
+    } */
     
+    .edit-input {
+        padding: 0px 20px 0px 20px;
+    }
+
+    .inline-edit-styling {
+        box-shadow: 1px 1px 20px #9099B3 inset;
+    }
+
     #recipe-results-footer {
         justify-content: flex-end;
         margin-right: 50px;
