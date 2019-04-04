@@ -3,7 +3,12 @@ $(document).ready(function () {
     $('#search-button').on('click', function(event) {
         event.preventDefault();
         var recipeSearch = $('#recipe-search').val().trim();
-        window.location = '/api/search?search=' + recipeSearch;
+        if (!recipeSearch) {
+            alert("Please enter something!");
+            $('#recipe-search').val('').focus();
+        } else {
+            window.location = '/api/search?search=' + recipeSearch;
+        }
     });
 
     $('.save-fave').on('click', function(event) {
@@ -21,5 +26,11 @@ $(document).ready(function () {
             console.log("Data logged to server");
             console.log(response);
         });
+    });
+
+    $('.delete-fave').on('click', function(event) {
+        event.preventDefault();
+        var id = $(this).attr("data-id");
+        window.location = '/api/delete?id=' + id;
     });
 });
