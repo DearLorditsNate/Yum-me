@@ -22,4 +22,10 @@ $(document).ready(function () {
             console.log(response);
         });
     });
+
+    $('.delete-fave').on('click', function(event) {
+        event.preventDefault();
+        var id = $(this).attr("data-id");
+        window.location = '/api/delete?id=' + id;
+    });
 });
