@@ -92,7 +92,7 @@ $(document).ready(function () {
     $('.delete-fave').on('click', function (event) {
         event.preventDefault();
         var id = $(this).attr("data-id");
-        window.location = '/api/delete?id=' + id;
+        window.location = '/api/delete?id=' + id + "&fb_id=" + uid;
     });
 
     //load saved pages with dynamic user id parameter

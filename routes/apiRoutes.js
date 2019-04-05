@@ -54,7 +54,10 @@ module.exports = function (app) {
                 id: req.query.id
             }
         }).then(function (response) {
-            res.redirect('/profile/favorites');
+            var route = '/favorites/' + req.query.fb_id;
+            // console.log("Route: " + route);
+            res.redirect(route);
+            // window.location = '/favorites/' + req.query.fb_id;
         });
     });
 
