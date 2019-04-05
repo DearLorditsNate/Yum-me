@@ -2,7 +2,7 @@
 // Express
 var express = require("express");
 var app = express();
-var PORT = process.env.PORT || 3000;
+// var PORT = process.env.PORT || 3000;
 var path = require('path');
 
 
@@ -30,7 +30,7 @@ require("./routes/apiCalls")(app);
 var db = require('./models')
 
 db.sequelize.sync().then(function(){
-    app.listen(PORT, function() {
+    app.listen(process.env.PORT || 3000, function() {
         console.log("Listening on port: " + PORT);
     });    
 })
