@@ -203,7 +203,8 @@ body {
         margin: 0 0 0 10px;
     }
 
-    #full-view-comments-row {
+    #full-view-comments {
+        min-height: 200px;
         max-height: 200px;
         overflow: auto;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -212,10 +213,6 @@ body {
 
     #full-view-ingredient-col {
         margin: 10px 4px 0px 20px;
-    }
-
-    #full-view-comments {
-        padding: 10px;
     }
 
     #full-view-instructions-col {
@@ -250,6 +247,7 @@ body {
         background-color: aliceblue;
         overflow: auto;
         max-height: 400px;
+
     }
 
     #recipe-results-footer {
