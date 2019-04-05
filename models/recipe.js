@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes){
         instructions: DataTypes.TEXT,
         ingredientName: DataTypes.TEXT,
         ingredientMeasure: DataTypes.STRING,
-        comment: DataTypes.TEXT
+        comment: DataTypes.TEXT,
+        firebaseID: DataTypes.STRING
     });
     return Recipe;
 };
