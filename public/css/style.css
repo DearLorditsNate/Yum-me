@@ -338,21 +338,21 @@ hr {
     text-align: center;
 }
 
-/* Logout Styling */
-
-#logout-div {
-    position: absolute;
-    top: 79%;
-    right: 4%;
+/* Create Own Receipe */
+#add-ingredient {
+    font-size: 2em;
+    background-color: #6CA4DC;
+    color: white;
+    padding: 0px 7px;
+    margin: 0px 0px 0px 3px;
+    width: 100%;
 }
 
-#logout-greeting {
-    color: #2F3F67;
-    font-style: italic
-}
-
-#successful-logout {
-    color: #9099B3
+#add-ingredient:hover,
+#create-recipe-button:hover
+ {
+     color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* FOOTER */
@@ -362,8 +362,6 @@ hr {
     text-align: center;
     bottom: 0;
     width: 100%;
-    /* background-color: #EFEAEC;
-    opacity: 0.6; */
     padding: 10px;
     color: #2F3F67;
     box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
