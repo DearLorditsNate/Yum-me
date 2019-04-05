@@ -1,6 +1,48 @@
+
+///USER-ID global for signed-in status
+var uid;
+
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyAsThNShgq4fKrF4P6MXxYKXu0_QlycYrM",
+    authDomain: "yumme-aa883.firebaseapp.com",
+    databaseURL: "https://yumme-aa883.firebaseio.com",
+    projectId: "yumme-aa883",
+    storageBucket: "yumme-aa883.appspot.com",
+    messagingSenderId: "1034737329949"
+};
+firebase.initializeApp(config);
+
+//firebase authentication listener, and navbar button hiding for signed out/signed in users
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        uid = user.uid;
+        $('#search, #saved, #log-out').show();
+        $('#home').hide();
+        $('#welcome-message').show();
+        console.log('USER ID= ' + uid);
+
+        //ajax call to get user's name and populate nav bar with their name
+        $.get('/api/User', {
+            firebaseId: uid
+        }).then(function (response) {
+            $('#nav-bar-name').text(response.firstName);
+        });
+    } else {
+        console.log('no one is signed in');
+        $('#search, #saved, #log-out').hide();
+        $('#welcome-message').hide();
+    };
+});
+
+
 $(document).ready(function () {
+
+    //hide wrong email/password message
+    $('#bad-sign-in-message').hide()
+
     // Event listeners
-    $('#search-button').on('click', function(event) {
+    $('#search-button').on('click', function (event) {
         event.preventDefault();
         var recipeSearch = $('#recipe-search').val().trim();
         if (!recipeSearch) {
@@ -11,14 +53,15 @@ $(document).ready(function () {
         }
     });
 
-    $('.save-fave').on('click', function(event) {
+    $('.save-fave').on('click', function (event) {
         event.preventDefault();
         var data = {
             name: $(this).attr("data-name"),
             image: $(this).attr("data-image"),
             instructions: $(this).attr("data-instructions"),
             ingredientName: $(this).attr("data-ingredients"),
-            ingredientMeasure: $(this).attr("data-measurements")
+            ingredientMeasure: $(this).attr("data-measurements"),
+            firebaseID: uid
         };
         console.log(data);
 
@@ -28,9 +71,73 @@ $(document).ready(function () {
         });
     });
 
-    $('.delete-fave').on('click', function(event) {
+    $('.delete-fave').on('click', function (event) {
         event.preventDefault();
         var id = $(this).attr("data-id");
         window.location = '/api/delete?id=' + id;
     });
+
+    $('#saved').on('click', function () {
+        window.location = '/api/favorites/' + uid;
+    })
+
+    $('#login').on('click', e => {
+        //grab dom elements
+        var emailText = $('#email').val();
+        var password = $('#password').val();
+
+        firebase.auth().signInWithEmailAndPassword(emailText, password).catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+        });
+    });
+
+    $('#sign-up').on('click', e => {
+        event.preventDefault();
+        //grab dom elements
+        var firstName = $('#first-name').val();
+        var lastName = $('#last-name').val();
+        var emailText = $('#signup-email').val();
+        var password = $('#signup-password').val();
+
+        firebase.auth().createUserWithEmailAndPassword(emailText, password).catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+        });
+
+        //timer to allow firebase to create the ID before sending it to SQL
+        setTimeout(function () {
+            $.post('/api/newUser', {
+                firstName: firstName,
+                lastName: lastName,
+                firebaseId: uid,
+                email: emailText,
+                password: password
+            }).then(function (response) {
+                console.log("User created")
+                console.log(response)
+            });
+        }, 2000);
+
+    });
+
+    $('#log-out').on('click', e => {
+        firebase.auth().signOut();
+    });
+
+    $('.redirect-submit-button').on('click', function () {
+        setTimeout(function () { 
+            if(uid !== undefined){
+                window.location = '/profile/search' 
+            } else {
+                $('#bad-sign-in-message').show();
+                $('#email').val("")
+                $('#email').val("")
+            }
+        }, 2000)
+    })
 });
