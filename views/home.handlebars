@@ -16,13 +16,14 @@
                     </div>
                     <div class="form-group">
                         <label for="password" class="col-form-label">Password:</label>
-                        <input class="form-control" id="password"></input>
+                        <input class="form-control" type='password' id="password"></input>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
+                <p id='bad-sign-in-message' class='text-danger pr-5 mt-3'>Invalid email and/or password</p>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn home-buttons" id="login">Submit</button>
+                <button type="button" class="btn home-buttons redirect-submit-button" id='login'>Submit</button>
             </div>
         </div>
     </div>
@@ -53,13 +54,13 @@
                     </div>
                     <div class="form-group">
                         <label for="signup-password" class="col-form-label">Password:</label>
-                        <input class="form-control" id="signup-password"></input>
+                        <input class="form-control" type='password' id="signup-password"></input>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn home-buttons" id="sign-up">Submit</button>
+                <button type="button" class="btn home-buttons redirect-submit-button" id='sign-up'>Submit</button>
             </div>
         </div>
     </div>

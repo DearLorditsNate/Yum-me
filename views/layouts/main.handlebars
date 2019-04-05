@@ -32,8 +32,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
 
     {{!-- Javascript Links --}}
-    <script src="/js/app.js"></script>
-    <script src="/js/requests.js"></script>
+    <script src="/js/renderResults.js"></script>
 
 </head>
 
@@ -46,20 +45,23 @@
                         <a id="home" class="nav-link active" href="/">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a id="search" class="nav-link" href="/api/search/">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="saved" class="nav-link">Saved</a>
+                    </li>
+                    <li>
                         <a id="about" class="nav-link" href="/profile/about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a id="search" class="nav-link" href="/profile/search">Search</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="saved" class="nav-link" href="/profile/favorites">Saved</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="logout" class="nav-link" href="/profile/logout">Logout</a>
+                        <a id="log-out" class="nav-link" href="/">Logout</a>
                     </li>
                 </ul>
                 <span id="icons">
                     <ul class="nav-right">
+                        <li id='welcome-message' class='nav-item'>
+                            <p class='nav-link'>Hello, <span id='nav-bar-name'></span>!</p>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#">
                                 <i class="fab fa-facebook-square"></i>
