@@ -49,52 +49,56 @@ $(document).ready(function () {
         var id = $(this).attr("data-id");
         window.location = '/api/delete?id=' + id;
     });
-});
 
 
     // Change full view modal text to editable text
     // ==================================================
-    $(document).on('click','.update-recipe', function() {
+    $(document).on('click', '.update-recipe', function () {
+        event.preventDefault();
         var $button = $(".update-recipe");
         $button.text("Save Updates");
         $button.removeClass("update-recipe").addClass("save-updates");
 
         var $input = $(".edit-input").attr('contenteditable');
-            if ($input === "false") {
-                $(".edit-input").attr('contenteditable', 'true');
-            }
+        if ($input === "false") {
+            $(".edit-input").attr('contenteditable', 'true');
+        }
         $(".edit-input").addClass("inline-edit-styling");
 
     });
 
-    $(document).on('click','.save-updates', function() {
-
+    $(document).on('click', '.save-updates', function () {
+        event.preventDefault();
         var data = {
-            id: $(".save-updates").attr('data-id'),
-            instructions: $("#instructions-update").text(),
-            ingredientName: $("#ingredients-update").text(),
+            id: $(this).attr('data-id'),
+            instructions: $("#instructions-update").text().trim(),
+            ingredientName: $("#ingredients-update").text().trim(),
             ingredientMeasure: "something",
-            comments: $("#comments-update").text()
+            comment: $("#full-view-comments").text().trim()
         }
+
+        console.log(data);
+
+        $.ajax({
+            url: "/api/update",
+            type: "PUT",
+            data: data
+        }).then(function (response) {
+            console.log(response);
+        });
 
         var $button = $(".save-updates");
         $button.text("Update Recipe");
         $button.removeClass("save-updates").addClass("update-recipe");
 
         var $stopInput = $(".edit-input").attr('contenteditable');
-            if ($stopInput === "true") {
-                $(".edit-input").attr('contenteditable', 'false');
-            }
+        if ($stopInput === "true") {
+            $(".edit-input").attr('contenteditable', 'false');
+        }
 
-                    
+
         $(".edit-input").removeClass("inline-edit-styling");
 
-        $.ajax({
-            url: "/api/update",
-            type: "PUT",
-            data: data
-        }).then(function(response) {
-            console.log(response);
-        });
     });
     // ==================================================
+});

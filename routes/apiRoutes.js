@@ -41,7 +41,7 @@ module.exports = function(app){
                     id: req.body.id
                 }
             }).then(function(response) {
-                res.redirect('/profile/favorites');
+                res.json(response);
             });
     });
 }
