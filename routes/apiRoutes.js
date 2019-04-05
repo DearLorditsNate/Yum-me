@@ -14,43 +14,35 @@ module.exports = function (app) {
             res.json(response);
         });
     });
-
-    // Get saved recipes
-    app.get('/profile/favorites', function(req, res) {
-        db.Recipe.findAll({}).then(function(recipes) {
-            for (var i = 0; i < recipes.length; i++) {
-                var measurementArr = [];
-                var measurementString = recipes[i].ingredientMeasure;
-
-                var itemArr = [];
-                var itemString = recipes[i].ingredientName;
-
-                measurementString = measurementString.split(',');
-                for (var j = 0; j < measurementString.length; j++) {
-                    if (measurementString[j] !== " ") {
-                        measurementArr.push(measurementString[j].trim());
-                    }
-                }
-
-                itemString = itemString.split(',');
-                for (var k = 0; k < itemString.length; k++) {
-                    if (itemString[k] !== " ") {
-                        itemArr.push(itemString[k]);
-                    }
-                }
-
-                for (var l = 0; l < measurementArr.length; l++) {
-                    measurementArr[l] = measurementArr[l] + itemArr[l];
-                }
-                recipes[i].ingredients = measurementArr;
-            }
-            res.render('favorites', {recipes: recipes});
-        });
-    });
- 
   
-    app.get('/api/favorites/:id', function (req, res) {
+    app.get('/favorites/:id', function (req, res) {
         db.Recipe.findAll({ where: { firebaseID: req.params.id } }).then(function (recipes) {
+            for(var i = 0; i < recipes.length; i++) {
+            var measurementArr = [];
+            var measurementString = recipes[i].ingredientMeasure;
+
+            var itemArr = [];
+            var itemString = recipes[i].ingredientName;
+
+            measurementString = measurementString.split(',');
+            for (var j = 0; j < measurementString.length; j++) {
+                if (measurementString[j] !== " ") {
+                    measurementArr.push(measurementString[j].trim());
+                }
+            }
+
+            itemString = itemString.split(',');
+            for (var k = 0; k < itemString.length; k++) {
+                if (itemString[k] !== " ") {
+                    itemArr.push(itemString[k]);
+                }
+            }
+
+            for (var l = 0; l < measurementArr.length; l++) {
+                measurementArr[l] = measurementArr[l] + itemArr[l];
+            }
+            recipes[i].ingredients = measurementArr;
+        }
             res.render('favorites', { recipes: recipes });
         });
     });
@@ -62,7 +54,10 @@ module.exports = function (app) {
                 id: req.query.id
             }
         }).then(function (response) {
-            res.redirect('/profile/favorites');
+            var route = '/favorites/' + req.query.fb_id;
+            // console.log("Route: " + route);
+            res.redirect(route);
+            // window.location = '/favorites/' + req.query.fb_id;
         });
     });
 

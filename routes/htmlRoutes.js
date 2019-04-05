@@ -8,7 +8,7 @@ module.exports = function(app) {
         res.render('home');
     });
 
-    app.get('/profile/search', function(req,res) {
+    app.get('/search', function(req,res) {
         res.render('search');
     });
 
@@ -24,7 +24,7 @@ module.exports = function(app) {
         res.render('createRecipe');
     });
 
-    app.get('/profile/about', function(req,res) {
+    app.get('/about', function(req,res) {
         res.render('about');
     });
 }
