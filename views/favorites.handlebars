@@ -61,9 +61,11 @@
                                                 <h6>Ingredients</h6>
                                             </div>
                                             <div class="row full-view-content-font edit-input" contenteditable="false" id="ingredients-update">
-                                                <p>
-                                                    {{dataValues.ingredientMeasure}} {{dataValues.ingredientName}}
-                                                </p>
+                                                <ul>
+                                                    {{#each ingredients as |item|}}
+                                                        <li>{{item}}</li>
+                                                    {{/each}}
+                                                </ul>
                                             </div>
                                         </div>
                                         {{!-- COMMENTS COLUMN --}}
