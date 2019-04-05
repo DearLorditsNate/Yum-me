@@ -72,28 +72,65 @@ $(document).ready(function () {
     });
 
     //create a new recipe
-    $("#create-recipe-button").on("click", function (event) {
+    //===================
+    $(document).on('click', "#add-ingredient", function () {
+        event.preventDefault();
+        var $ingredientDiv = $("#ingredient-div");
+        var buildNewDiv = '<br><div class="row"><div class="col"><div class="form-group"><input name="measurements[]" type="text" class="form-control" placeholder="1 cup"></div></div><div class="col"><div class="form-group"><input name="ingredients[]" type="text" class="form-control" placeholder="Pecans"></div></div><div class="col-1"></div></div>'
+        $ingredientDiv.append(buildNewDiv);
+
+    })
+
+    $(document).on('click', "#add-instruction", function () {
+        event.preventDefault();
+        var $instructionDiv = $("#instruction-div");
+        var buildNewDiv = '<div class="row"><div class="col"><div class="form-group"><input name="instructions[]" type="text" class="form-control" placeholder="1. Roughly chop the pecans"></div></div><div class="col-1"></div></div>'
+        $instructionDiv.append(buildNewDiv);
+
+    });
+
+    $(document).on('click', "#create-recipe-button", function() {
+        var $ingredients = $('input[name^=ingredients]').map(function(idx, elem) {
+            return $(elem).val().trim();
+        }).get();
+
+        var $measurements = $('input[name^=measurements]').map(function(idx, elem) {
+            return $(elem).val().trim();
+        }).get();
+
+        var $instructions = $('input[name^=instructions]').map(function(idx, elem) {
+            return $(elem).val().trim();
+        }).get();
+
+        $ingredients = $ingredients.toString();
+        $instructions = $instructions.toString();
+        $measurements = $measurements.toString();
+
         event.preventDefault();
         var data = {
             name: $('#name').val(),
             image: $('#photo').val(),
-            instructions: $('#instructions').val(),
-            ingredientName: $('#ingredients').val(),
-            ingredientMeasure: "something"
+            instructions: $instructions,
+            ingredientName: $ingredients,
+            ingredientMeasure: $measurements
         }
 
         $.post('/api/save', data).then(function (response) {
             console.log("Data logged to server");
             console.log(response);
         });
-    });
+
+    })
+    //===================
 
     //delete a favorite
+    //===================
     $('.delete-fave').on('click', function (event) {
         event.preventDefault();
         var id = $(this).attr("data-id");
         window.location = '/api/delete?id=' + id + "&fb_id=" + uid;
     });
+    //===================
 
     //load saved pages with dynamic user id parameter
     $('#saved').on('click', function () {
