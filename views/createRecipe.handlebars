@@ -34,7 +34,7 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Ingredient</label>
-                            <input type="text" class="form-control ingredient" placeholder="1 cup">
+                            <input name="ingredients[]" type="text" class="form-control ingredient" placeholder="1 cup">
                         </div>
                     </div>
                     <div class="col-1">
@@ -64,9 +64,21 @@
     $(document).on('click', "#add-ingredient", function () {
         
         var $ingredientDiv = $("#ingredient-div");
-        var buildNewDiv = '<br><div class="row"><div class="col"><div class="form-group"><label for="formGroupExampleInput2">Measurement</label><input type="text" class="form-control measurement" placeholder="Pecans"></div></div><div class="col"><div class="form-group"><label for="formGroupExampleInput2">Ingredient</label><input type="text" class="form-control ingredient" placeholder="1 cup"></div></div><div class="col-1"></div></div>'
+        var buildNewDiv = '<br><div class="row"><div class="col"><div class="form-group"><label for="formGroupExampleInput2">Measurement</label><input type="text" class="form-control measurement" placeholder="1 cup"></div></div><div class="col"><div class="form-group"><label for="formGroupExampleInput2">Ingredient</label><input name="ingredients[]" type="text" class="form-control ingredient" placeholder="Pecans"></div></div><div class="col-1"></div></div>'
         $ingredientDiv.append(buildNewDiv);
 
-})
+    })
+
+    $(document).on('click', "#create-recipe-button", function() {
+        var $ingredients = $('input[name^=ingredients]').map(function(idx, elem) {
+            
+            return $(elem).val().trim();
+
+        }).get();
+
+        alert($ingredients);
+        event.preventDefault();
+
+    })
                 
 </script>
