@@ -9,6 +9,7 @@ module.exports = function (app) {
             instructions: req.body.instructions,
             ingredientName: req.body.ingredientName,
             ingredientMeasure: req.body.ingredientMeasure,
+            comment: req.body.comment,
             firebaseID: req.body.firebaseID
         }).then(function (response) {
             res.json(response);
@@ -55,9 +56,7 @@ module.exports = function (app) {
             }
         }).then(function (response) {
             var route = '/favorites/' + req.query.fb_id;
-            // console.log("Route: " + route);
             res.redirect(route);
-            // window.location = '/favorites/' + req.query.fb_id;
         });
     });
 

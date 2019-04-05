@@ -102,9 +102,12 @@ $(document).ready(function () {
             return $(elem).val().trim();
         }).get();
 
+        var $comment = $('#comments').val().trim();
+
         $ingredients = $ingredients.toString();
         $instructions = $instructions.toString();
         $measurements = $measurements.toString();
+        $comment = $comment.toString();
 
         event.preventDefault();
         var data = {
@@ -112,25 +115,25 @@ $(document).ready(function () {
             image: $('#photo').val(),
             instructions: $instructions,
             ingredientName: $ingredients,
-            ingredientMeasure: $measurements
+            ingredientMeasure: $measurements,
+            comment: $comment,
+            firebaseID: uid
         }
 
         $.post('/api/save', data).then(function (response) {
             console.log("Data logged to server");
             console.log(response);
+            window.location = '/favorites/' + uid;
         });
 
-    })
-    //===================
+    });
 
     //delete a favorite
-    //===================
     $('.delete-fave').on('click', function (event) {
         event.preventDefault();
         var id = $(this).attr("data-id");
         window.location = '/api/delete?id=' + id + "&fb_id=" + uid;
     });
-    //===================
 
     //load saved pages with dynamic user id parameter
     $('#saved').on('click', function () {
