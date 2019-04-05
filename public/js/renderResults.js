@@ -1,4 +1,3 @@
-
 ///USER-ID global for signed-in status
 var uid;
 
@@ -53,6 +52,7 @@ $(document).ready(function () {
         }
     });
 
+    //save a favorite
     $('.save-fave').on('click', function (event) {
         event.preventDefault();
         var data = {
@@ -71,16 +71,36 @@ $(document).ready(function () {
         });
     });
 
+    //create a new recipe
+    $("#create-recipe-button").on("click", function (event) {
+        event.preventDefault();
+        var data = {
+            name: $('#name').val(),
+            image: $('#photo').val(),
+            instructions: $('#instructions').val(),
+            ingredientName: $('#ingredients').val(),
+            ingredientMeasure: "something"
+        }
+
+        $.post('/api/save', data).then(function (response) {
+            console.log("Data logged to server");
+            console.log(response);
+        });
+    });
+
+    //delete a favorite
     $('.delete-fave').on('click', function (event) {
         event.preventDefault();
         var id = $(this).attr("data-id");
         window.location = '/api/delete?id=' + id;
     });
 
+    //load saved pages with dynamic user id parameter
     $('#saved').on('click', function () {
         window.location = '/api/favorites/' + uid;
     })
 
+    //sign in user with firebase
     $('#login').on('click', e => {
         //grab dom elements
         var emailText = $('#email').val();
@@ -94,6 +114,7 @@ $(document).ready(function () {
         });
     });
 
+    //sign up user with firebase
     $('#sign-up').on('click', e => {
         event.preventDefault();
         //grab dom elements
@@ -125,14 +146,16 @@ $(document).ready(function () {
 
     });
 
+    //log out user
     $('#log-out').on('click', e => {
         firebase.auth().signOut();
     });
 
+    //signup AND login submit button timer and authentication check
     $('.redirect-submit-button').on('click', function () {
-        setTimeout(function () { 
-            if(uid !== undefined){
-                window.location = '/profile/search' 
+        setTimeout(function () {
+            if (uid !== undefined) {
+                window.location = '/profile/search'
             } else {
                 $('#bad-sign-in-message').show();
                 $('#email').val("")
@@ -140,4 +163,52 @@ $(document).ready(function () {
             }
         }, 2000)
     })
+
+    //update recipe
+    $(document).on('click', '.update-recipe', function () {
+        event.preventDefault();
+        var $button = $(".update-recipe");
+        $button.text("Save Updates");
+        $button.removeClass("update-recipe").addClass("save-updates");
+
+        var $input = $(".edit-input").attr('contenteditable');
+        if ($input === "false") {
+            $(".edit-input").attr('contenteditable', 'true');
+        }
+        $(".edit-input").addClass("inline-edit-styling");
+
+    });
+
+    $(document).on('click', '.save-updates', function () {
+        event.preventDefault();
+        var data = {
+            id: $(this).attr('data-id'),
+            instructions: $("#instructions-update").text().trim(),
+            ingredientName: $("#ingredients-update").text().trim(),
+            ingredientMeasure: "something",
+            comment: $("#full-view-comments").text().trim()
+        }
+
+        console.log(data);
+
+        $.ajax({
+            url: "/api/update",
+            type: "PUT",
+            data: data
+        }).then(function (response) {
+            console.log(response);
+        });
+
+        var $button = $(".save-updates");
+        $button.text("Update Recipe");
+        $button.removeClass("save-updates").addClass("update-recipe");
+
+        var $stopInput = $(".edit-input").attr('contenteditable');
+        if ($stopInput === "true") {
+            $(".edit-input").attr('contenteditable', 'false');
+        }
+
+        $(".edit-input").removeClass("inline-edit-styling");
+
+    });
 });

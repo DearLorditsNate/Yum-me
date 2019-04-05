@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes){
         name: DataTypes.STRING,
         image: DataTypes.STRING,
         instructions: DataTypes.TEXT,
-        ingredientName: DataTypes.STRING,
+        ingredientName: DataTypes.TEXT,
         ingredientMeasure: DataTypes.STRING,
         firebaseID: DataTypes.STRING
     });

@@ -20,6 +20,10 @@ module.exports = function(app) {
         res.render('logout');
     });
 
+    app.get('/profile/create', function(req,res) {
+        res.render('createRecipe');
+    });
+
     app.get('/profile/about', function(req,res) {
         res.render('about');
     });

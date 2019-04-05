@@ -1,0 +1,44 @@
+{{!-- HEADING/QUOTE CARD --}}
+<div class="container profile-container">
+    <div class="card">
+        <div class="card-header card-header-style">
+            Create Your Own Recipe!
+        </div>
+        <div class="card-body quote-body">
+            <blockquote class="blockquote mb-0 quote-styling">
+                <p>“Recipe Quote"</p>
+                <footer class="blockquote-footer quote-footer">Author</footer>
+            </blockquote>
+        </div>
+
+        {{!-- Placeholders for Recipe Favorites/Search Results--}}
+        <div class="container" id="create-recipe-form">
+            <form>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Recipe Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Grandma's Pecan Pie" required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Ingredients</label>
+                    <input type="text" class="form-control" id="ingredients" placeholder="Sugar, Pecans, Flour, Butter, Love">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Instructions</label>
+                    <input type="text" class="form-control" id="instructions" placeholder="2 cups, 1 cup, 2 cups, 1 cup, an Abundance">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Comments</label>
+                    <input type="text" class="form-control" id="comments" placeholder="Use large eggs, not extra large or the pie will be runny; small eggs are not enough.">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Image Link</label>
+                    <input type="text" id="photo" class="form-control">
+                </div>
+                <button type="button" class="btn login-buttons" id="create-recipe-button">Save</button>
+            </form>
+        </div>
+        <footer id="create-recipe-footer">
+
+        </footer>
+    </div>
+</div>

@@ -57,4 +57,17 @@ module.exports = function (app) {
             res.json(response);
         });
     });
+
+    // Updated saved recipe
+    app.put('/api/update', function(req, res) {
+        db.Recipe.update(
+            req.body,
+            {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function(response) {
+                res.json(response);
+            });
+    });
 };
