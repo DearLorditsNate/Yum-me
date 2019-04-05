@@ -28,13 +28,13 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Measurement</label>
-                            <input type="text" class="form-control measurement" placeholder="Pecans">
+                            <input name="measurements[]" type="text" class="form-control measurement" placeholder="1 cup">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Ingredient</label>
-                            <input name="ingredients[]" type="text" class="form-control ingredient" placeholder="1 cup">
+                            <input name="ingredients[]" type="text" class="form-control ingredient" placeholder="Pecans">
                         </div>
                     </div>
                     <div class="col-1">
@@ -64,7 +64,7 @@
     $(document).on('click', "#add-ingredient", function () {
         
         var $ingredientDiv = $("#ingredient-div");
-        var buildNewDiv = '<br><div class="row"><div class="col"><div class="form-group"><label for="formGroupExampleInput2">Measurement</label><input type="text" class="form-control measurement" placeholder="1 cup"></div></div><div class="col"><div class="form-group"><label for="formGroupExampleInput2">Ingredient</label><input name="ingredients[]" type="text" class="form-control ingredient" placeholder="Pecans"></div></div><div class="col-1"></div></div>'
+        var buildNewDiv = '<br><div class="row"><div class="col"><div class="form-group"><label for="formGroupExampleInput2">Measurement</label><input name="measurements[]" type="text" class="form-control measurement" placeholder="1 cup"></div></div><div class="col"><div class="form-group"><label for="formGroupExampleInput2">Ingredient</label><input name="ingredients[]" type="text" class="form-control ingredient" placeholder="Pecans"></div></div><div class="col-1"></div></div>'
         $ingredientDiv.append(buildNewDiv);
 
     })
@@ -76,7 +76,14 @@
 
         }).get();
 
-        alert($ingredients);
+        var $measurements = $('input[name^=measurements]').map(function(idx, elem) {
+            
+            return $(elem).val().trim();
+
+        }).get();
+
+        alert($ingredients + $measurements);
+
         event.preventDefault();
 
     })
