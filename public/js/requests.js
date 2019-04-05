@@ -50,3 +50,51 @@ $(document).ready(function () {
         window.location = '/api/delete?id=' + id;
     });
 });
+
+
+    // Change full view modal text to editable text
+    // ==================================================
+    $(document).on('click','.update-recipe', function() {
+        var $button = $(".update-recipe");
+        $button.text("Save Updates");
+        $button.removeClass("update-recipe").addClass("save-updates");
+
+        var $input = $(".edit-input").attr('contenteditable');
+            if ($input === "false") {
+                $(".edit-input").attr('contenteditable', 'true');
+            }
+        $(".edit-input").addClass("inline-edit-styling");
+
+    });
+
+    $(document).on('click','.save-updates', function() {
+
+        var data = {
+            id: $(".save-updates").attr('data-id'),
+            instructions: $("#instructions-update").text(),
+            ingredientName: $("#ingredients-update").text(),
+            ingredientMeasure: "something",
+            comments: $("#comments-update").text()
+        }
+
+        var $button = $(".save-updates");
+        $button.text("Update Recipe");
+        $button.removeClass("save-updates").addClass("update-recipe");
+
+        var $stopInput = $(".edit-input").attr('contenteditable');
+            if ($stopInput === "true") {
+                $(".edit-input").attr('contenteditable', 'false');
+            }
+
+                    
+        $(".edit-input").removeClass("inline-edit-styling");
+
+        $.ajax({
+            url: "/api/update",
+            type: "PUT",
+            data: data
+        }).then(function(response) {
+            console.log(response);
+        });
+    });
+    // ==================================================

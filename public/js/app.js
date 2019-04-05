@@ -12,6 +12,8 @@ firebase.initializeApp(config);
 
 $(document).ready(function () {
 
+    // FIREBASE
+    // ==================================================
     //event listeners
     $('#login').on('click', e => {
         //grab dom elements
@@ -60,5 +62,7 @@ $(document).ready(function () {
             console.log('no one is signed in');
         }
     });
+    // ==================================================
 
 });
+

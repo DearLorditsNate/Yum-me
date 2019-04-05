@@ -44,7 +44,7 @@
                                             <h6><em>Make it your own!</em></h6>
                                         </div>
                                         <div class="row update-recipe-button-rows">
-                                            <button type="button" class="btn btn-lg modify-recipe-button update-recipe">Update
+                                            <button type="button" class="btn btn-lg modify-recipe-button update-recipe" data-id={{dataValues.id}}>Update
                                                 Recipe</button>
                                         </div>
                                     </div>
@@ -60,7 +60,7 @@
                                             <div class="row">
                                                 <h6>Ingredients</h6>
                                             </div>
-                                            <div class="row full-view-content-font edit-input" contenteditable="false" style="">
+                                            <div class="row full-view-content-font edit-input" contenteditable="false" id="ingredients-update">
                                                 <p>
                                                     {{dataValues.ingredientMeasure}} {{dataValues.ingredientName}}
                                                 </p>
@@ -74,7 +74,7 @@
                                                     <div class="row">
                                                         <h6>Instructions</h6>
                                                     </div>
-                                                    <div class="row full-view-content-font edit-input" contenteditable="false">
+                                                    <div class="row full-view-content-font edit-input" contenteditable="false" id="instructions-update">
                                                         <p>
                                                             {{dataValues.instructions}}
                                                         </p>
@@ -92,7 +92,7 @@
                             <div class="row" id="full-view-comments-row">
 
                                 <div class="col">
-                                    <div class="row full-view-content-font edit-input" id="full-view-comments" contenteditable="false">
+                                    <div class="row full-view-content-font edit-input" id="full-view-comments" contenteditable="false" id="comments-update">
                                         <p>
                                             {{dataValues.recipeComments}}
                                         </p>
@@ -126,38 +126,3 @@
     
 </div>
 </div>
-
-<script>
-
-
-
-    $(document).on('click','.update-recipe', function() {
-        var $button = $(".update-recipe");
-        $button.text("Save Updates");
-        $button.removeClass("update-recipe").addClass("save-updates");
-
-        var $input = $(".edit-input").attr('contenteditable');
-            if ($input === "false") {
-                $(".edit-input").attr('contenteditable', 'true');
-            }
-        $(".edit-input").addClass("inline-edit-styling");
-
-    });
-
-    $(document).on('click','.save-updates', function() {
-        var $button = $(".save-updates");
-        $button.text("Update Recipe");
-        $button.removeClass("save-updates").addClass("update-recipe");
-
-        var $stopInput = $(".edit-input").attr('contenteditable');
-            if ($stopInput === "true") {
-                $(".edit-input").attr('contenteditable', 'false');
-            }
-
-        $(".edit-input").removeClass("inline-edit-styling");
-
-    });
-
-
-
-</script>
