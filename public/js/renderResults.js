@@ -97,7 +97,7 @@ $(document).ready(function () {
 
     //load saved pages with dynamic user id parameter
     $('#saved').on('click', function () {
-        window.location = '/api/favorites/' + uid;
+        window.location = '/favorites/' + uid;
     })
 
     //sign in user with firebase
@@ -155,7 +155,7 @@ $(document).ready(function () {
     $('.redirect-submit-button').on('click', function () {
         setTimeout(function () {
             if (uid !== undefined) {
-                window.location = '/profile/search'
+                window.location = '/search'
             } else {
                 $('#bad-sign-in-message').show();
                 $('#email').val("")
