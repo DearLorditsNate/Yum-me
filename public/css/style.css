@@ -339,7 +339,7 @@ hr {
 }
 
 /* Create Own Receipe */
-#add-ingredient {
+#add-ingredient, #add-instruction {
     font-size: 2em;
     background-color: #6CA4DC;
     color: white;
@@ -349,6 +349,7 @@ hr {
 }
 
 #add-ingredient:hover,
+#add-instruction:hover,
 #create-recipe-button:hover
  {
      color: white;
