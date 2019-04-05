@@ -71,7 +71,7 @@
 <script>
 
     $(document).on('click', "#add-ingredient", function () {
-        
+        event.preventDefault();
         var $ingredientDiv = $("#ingredient-div");
         var buildNewDiv = '<br><div class="row"><div class="col"><div class="form-group"><input name="measurements[]" type="text" class="form-control" placeholder="1 cup"></div></div><div class="col"><div class="form-group"><input name="ingredients[]" type="text" class="form-control" placeholder="Pecans"></div></div><div class="col-1"></div></div>'
         $ingredientDiv.append(buildNewDiv);
@@ -79,7 +79,7 @@
     })
 
     $(document).on('click', "#add-instruction", function () {
-        
+        event.preventDefault();
         var $instructionDiv = $("#instruction-div");
         var buildNewDiv = '<div class="row"><div class="col"><div class="form-group"><input name="instructions[]" type="text" class="form-control" placeholder="1. Roughly chop the pecans"></div></div><div class="col-1"></div></div>'
         $instructionDiv.append(buildNewDiv);
