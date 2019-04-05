@@ -44,18 +44,15 @@
                 </div>
                 <div class="container" id="instruction-div">
                     <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Instructions</label>
-                            <input name="instructions[]" type="text" class="form-control" placeholder="1. Roughly chop the pecans">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Instructions</label>
+                                <input name="instructions[]" type="text" class="form-control" placeholder="1. Roughly chop the pecans">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input name="instructions[]" type="text" class="form-control" placeholder="1. Roughly chop the pecans">
+                        <div class="col-1">
+                            <button class="btn btn-sm" id="add-instruction">&#43;</button>
                         </div>
-                    </div>
-                    <div class="col-1">
-                        <button class="btn btn-sm" id="add-instruction">&#43;</button>
-                    </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -84,25 +81,25 @@
     $(document).on('click', "#add-instruction", function () {
         
         var $instructionDiv = $("#instruction-div");
-        var buildNewDiv = '<div class="col"><div class="form-group"><label for="formGroupExampleInput2">Instructions</label><input name="instructions[]" type="text" class="form-control"placeholder="1. Roughly chop the pecans"></div></div>'
+        var buildNewDiv = '<div class="row"><div class="col"><div class="form-group"><input name="instructions[]" type="text" class="form-control" placeholder="1. Roughly chop the pecans"></div></div><div class="col-1"></div></div>'
         $instructionDiv.append(buildNewDiv);
 
     });
 
     $(document).on('click', "#create-recipe-button", function() {
         var $ingredients = $('input[name^=ingredients]').map(function(idx, elem) {
-            
             return $(elem).val().trim();
-
         }).get();
 
         var $measurements = $('input[name^=measurements]').map(function(idx, elem) {
-            
             return $(elem).val().trim();
-
         }).get();
 
+        var $instructions = $('input[name^=instructions]').map(function(idx, elem) {
+            return $(elem).val().trim();
+        }).get();
         
+        alert($ingredients + $measurements + $instructions);
 
         event.preventDefault();
 
