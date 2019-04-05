@@ -19,20 +19,45 @@
                     <input type="text" class="form-control" id="name" placeholder="Grandma's Pecan Pie" required>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput2">Ingredients</label>
-                    <input type="text" class="form-control" id="ingredients" placeholder="Sugar, Pecans, Flour, Butter, Love">
+                    <label for="formGroupExampleInput2">Image Link</label>
+                    <input type="text" id="photo" class="form-control">
                 </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Instructions</label>
-                    <input type="text" class="form-control" id="instructions" placeholder="2 cups, 1 cup, 2 cups, 1 cup, an Abundance">
+                {{!-- Add Measurements & Ingredients Div --}}
+                <div class="container" id="ingredient-div">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Measurement</label>
+                                <input name="measurements[]" type="text" class="form-control" placeholder="1 cup">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Ingredient</label>
+                                <input name="ingredients[]" type="text" class="form-control" placeholder="Pecans">
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <button class="btn btn-sm" id="add-ingredient">&#43;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" id="instruction-div">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Instructions</label>
+                                <input name="instructions[]" type="text" class="form-control" placeholder="1. Roughly chop the pecans">
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <button class="btn btn-sm" id="add-instruction">&#43;</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">Comments</label>
                     <input type="text" class="form-control" id="comments" placeholder="Use large eggs, not extra large or the pie will be runny; small eggs are not enough.">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Image Link</label>
-                    <input type="text" id="photo" class="form-control">
                 </div>
                 <button type="button" class="btn login-buttons" id="create-recipe-button">Save</button>
             </form>
@@ -42,3 +67,42 @@
         </footer>
     </div>
 </div>
+
+<script>
+
+    $(document).on('click', "#add-ingredient", function () {
+        
+        var $ingredientDiv = $("#ingredient-div");
+        var buildNewDiv = '<br><div class="row"><div class="col"><div class="form-group"><input name="measurements[]" type="text" class="form-control" placeholder="1 cup"></div></div><div class="col"><div class="form-group"><input name="ingredients[]" type="text" class="form-control" placeholder="Pecans"></div></div><div class="col-1"></div></div>'
+        $ingredientDiv.append(buildNewDiv);
+
+    })
+
+    $(document).on('click', "#add-instruction", function () {
+        
+        var $instructionDiv = $("#instruction-div");
+        var buildNewDiv = '<div class="row"><div class="col"><div class="form-group"><input name="instructions[]" type="text" class="form-control" placeholder="1. Roughly chop the pecans"></div></div><div class="col-1"></div></div>'
+        $instructionDiv.append(buildNewDiv);
+
+    });
+
+    $(document).on('click', "#create-recipe-button", function() {
+        var $ingredients = $('input[name^=ingredients]').map(function(idx, elem) {
+            return $(elem).val().trim();
+        }).get();
+
+        var $measurements = $('input[name^=measurements]').map(function(idx, elem) {
+            return $(elem).val().trim();
+        }).get();
+
+        var $instructions = $('input[name^=instructions]').map(function(idx, elem) {
+            return $(elem).val().trim();
+        }).get();
+        
+        alert($ingredients + $measurements + $instructions);
+
+        event.preventDefault();
+
+    })
+                
+</script>
