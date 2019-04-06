@@ -102,7 +102,7 @@ recipe, or have the option to filter alphabetically, date saved, or with a possi
 - What I learned: "<em>insert what you learned throught his project!<em>"
 
 ### [Jenn Goldman]()
-- Primary Contributions: 
-- Team Strengths:
-- Favorite Aspect:
-- What I learned: "<em>insert what you learned throught his project!<em>"
+- Primary Contributions: Front End framework and styling
+- Team Strengths:  Front End, CSS
+- Favorite Aspect: My team <3 
+- What I learned: "<em>Finally mastered the development workflow of GitHub in regards to creating branches and pull requests! Also, gained more familiarity with Handlebars. <em>"
