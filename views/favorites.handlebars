@@ -4,10 +4,6 @@
         <div class="card-header card-header-style">
             My Favorite Recipes
             <a href="/profile/create" id="create-recipe"><h6>Create Your Own Recipe</h6></a>
-            <div class="form-group">
-                <input class="form-control" id="recipe-search" placeholder="Search through your favorites!"></input>
-                <button type="button" class="btn login-buttons" id="search-button">Search</button>
-            </div>
         </div>
         <div class="card-body quote-body">
             <blockquote class="blockquote mb-0 quote-styling">
@@ -60,7 +56,7 @@
                                             <div class="row">
                                                 <h6>Ingredients</h6>
                                             </div>
-                                            <div class="row full-view-content-font edit-input" contenteditable="false" id="ingredients-update">
+                                            <div class="row full-view-content-font" id="ingredients-update">
                                                 <ul>
                                                     {{#each ingredients as |item|}}
                                                         <li>{{item}}</li>
@@ -76,7 +72,7 @@
                                                     <div class="row">
                                                         <h6>Instructions</h6>
                                                     </div>
-                                                    <div class="row full-view-content-font edit-input" contenteditable="false" id="instructions-update">
+                                                    <div class="row full-view-content-font" id="instructions-update">
                                                         <p>
                                                             {{dataValues.instructions}}
                                                         </p>
@@ -114,10 +110,6 @@
                 </div>
             </div>
             {{/each}}
-        </div>
-        <hr>
-        <div class="recipe-results" id="recipe-results-footer">
-            <p>Next</p>
         </div>
     </div>
     
