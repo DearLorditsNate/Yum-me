@@ -5,7 +5,7 @@ A fully RESTful web application that allows users to search, save, edit, create 
 <strong>Heroku Link:</strong>
   
 ## Set-Up
-LIRI is powered by and styled with NPM packages! After running `npm init -y` &mdash; to initialize the `package.json` file &mdash; proceed installing all of the following node packages:
+Yum(me)! relies heavily on NPM packages! After running `npm init -y` &mdash; to initialize the `package.json` file &mdash; proceed installing all of the following node packages:
 
 ### Node packages
 
@@ -55,25 +55,33 @@ exports.firebase_api_key = {
 }
 
 ```
-
-### `server.js`
-
 ## Primary Functionalities of <em>Yum(me)!</em>
+- <strong>AJAX call:</strong> Pulls the value from the "search" term input and queries the mealdb API. The appropriate response object data is selected and then dynamically added as `data-attributes` to the `<a>` tag surrounding "Save to Favorites."
 
+- <strong>POST request:</strong> When a user clicks 'Save to Favorites', jQuery selects pulls the data-attributes stored on the `<a>` link then sends that data as a POST request to be stored in the `Recipe` table.
 
+- <strong>GET request</strong> - When a user logs in, all their saved recipes automatically appear on their Favorites page. This information is selected via their unique Firebase User ID from the `User` table.
+
+- <strong>Input Sanitization</strong> - We have minor input validations
 
 ### Future Development
-1. Database efficiency
-2. Render only x number of results to page then when user clicks "Next" button more recipes will populate
-3. Social engagement and sharing
-4. Better api for search results page
-5. Filter recipes on favorites page
-6. Mobile app
-7. Toast/Snackbar
-8. Text size scaling, particularly on the `Home` page
+- <strong>Database Efficiency</strong> - At this time, ingredients and measurements are each stored in strings which means we have duplicates! To be scalable, we would need to store each ingredient and each measurement once and then use foreign keys to access the correct data. 
+
+- <strong>Improved Input Sanitization</strong> - This will eventually include the functionality of updating ingredients, measurements, and instructions in the "View Full" modal on the Favorites page.
+
+- <strong>Reduce Data</strong> - At this time there are no constraints on the number of results rendered to the page. Additionally, each card contains all requisite response object data `==` limitless data could be send to the page! Not good. Ideally, we would love to limit to 3 -5 results and then include a "Next" button in the bottom right corner. Furthermore, this will also create a nicer user experience because they will not be overwhelmed with results, exhausted from choosing, and then being unstaisfied because they weren't sure if they picked the right one! #paradoxofchoice The user will be pleased with a few options, be energized by their easy choice, and then be even more atisfied with it as they start cooking and eating!
+
+- <strong>Better API for Search Page</strong> - The current api used for the Search page is very limited in the number and variety of recipes with only about 100 recipes to search through.
+
+- <strong>Filter Recipes on Favorites Page</strong> - Add functionality to the Favorites page where in users could search by ingredient, cuisine or name of 
+recipe, or have the option to filter alphabetically, date saved, or with a possible ranking feature. We could even include a "Top 5" most used.
+
+- <strong>Social Commenting and Sharing</strong>
+
+- <strong>Mobile App</strong>
 
 <hr>
-##The Creators
+## The Creators
 
 ### [Nate Micinski]()
 - Primary Contributions:
@@ -84,17 +92,17 @@ exports.firebase_api_key = {
 ### [Hanna Lauth]()
 - Primary Contributions:
 - Team Strengths:
-- Favorite Aspect:
-- What I learned: "<em>insert what you learned throught his project!<em>"
+- Favorite Aspect: The "View Full" modal is my favorite feature!
+- What I learned: "<em>That both Bootstrap and Materialize have particular functionality when it comes to buttons and input fields... you must click on the exact right spot for it to work! We spent a good 4 hours trying to figure out why I couldn't log in or sign up on the deployed heroku app from my computer... come to find out I only needed to click exactly on the text and wait 2 seconds - BOOM! Signed In. On a more technical note, I learned about pulling user input from multiple input fields simuntaneously, furthered my understanding and comfortability with `CRUD`, `back-end`, and jQuery/JavaScript, learned how to make HTML elements editable (`contentedible`), and became best friends with Modals, GitHub and Bash.<em> "
   
 ### [Mike Wilkenson]()
-- Primary Contributions:
+- Primary Contributions: Firebase User Authentication
 - Team Strengths:
 - Favorite Aspect:
 - What I learned: "<em>insert what you learned throught his project!<em>"
 
 ### [Jenn Goldman]()
-- Primary Contributions:
+- Primary Contributions: 
 - Team Strengths:
 - Favorite Aspect:
 - What I learned: "<em>insert what you learned throught his project!<em>"
