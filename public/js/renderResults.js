@@ -68,6 +68,7 @@ $(document).ready(function () {
         $.post("/api/save", data).then(function (response) {
             console.log("Data logged to server");
             console.log(response);
+            $('#saved-modal').modal('show');
         });
     });
 
@@ -138,7 +139,7 @@ $(document).ready(function () {
     //load saved pages with dynamic user id parameter
     $('#saved').on('click', function () {
         window.location = '/favorites/' + uid;
-    })
+    });
 
     //sign in user with firebase
     $('#login').on('click', e => {
