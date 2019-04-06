@@ -6,8 +6,8 @@
         </div>
         <div class="card-body quote-body">
             <blockquote class="blockquote mb-0 quote-styling">
-                <p>“Recipe Quote"</p>
-                <footer class="blockquote-footer quote-footer">Author</footer>
+                <p>“To practice any art, no matter how well or badly, is a way to make your soul grow. So do it."</p>
+                <footer class="blockquote-footer quote-footer">Kurt Vonnegut</footer>
             </blockquote>
         </div>
 
@@ -19,20 +19,45 @@
                     <input type="text" class="form-control" id="name" placeholder="Grandma's Pecan Pie" required>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput2">Ingredients</label>
-                    <input type="text" class="form-control" id="ingredients" placeholder="Sugar, Pecans, Flour, Butter, Love">
+                    <label for="formGroupExampleInput2">Image Link</label>
+                    <input type="text" id="photo" class="form-control">
                 </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Instructions</label>
-                    <input type="text" class="form-control" id="instructions" placeholder="2 cups, 1 cup, 2 cups, 1 cup, an Abundance">
+                {{!-- Add Measurements & Ingredients Div --}}
+                <div class="container" id="ingredient-div">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Measurement</label>
+                                <input name="measurements[]" type="text" class="form-control" placeholder="1 cup">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Ingredient</label>
+                                <input name="ingredients[]" type="text" class="form-control" placeholder="Pecans">
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <button class="btn btn-sm" id="add-ingredient">&#43;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" id="instruction-div">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Instructions</label>
+                                <input name="instructions[]" type="text" class="form-control" placeholder="1. Roughly chop the pecans">
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <button class="btn btn-sm" id="add-instruction">&#43;</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">Comments</label>
                     <input type="text" class="form-control" id="comments" placeholder="Use large eggs, not extra large or the pie will be runny; small eggs are not enough.">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Image Link</label>
-                    <input type="text" id="photo" class="form-control">
                 </div>
                 <button type="button" class="btn login-buttons" id="create-recipe-button">Save</button>
             </form>
