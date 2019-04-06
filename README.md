@@ -55,8 +55,8 @@ exports.firebase_api_key = {
 }
 
 ```
-###`server.js`
 
+### `server.js`
 
 ## Primary Functionalities of <em>Yum(me)!</em>
 
@@ -70,6 +70,7 @@ exports.firebase_api_key = {
 5. Filter recipes on favorites page
 6. Mobile app
 7. Toast/Snackbar
+8. Text size scaling, particularly on the `Home` page
 
 <hr>
 ##The Creators
