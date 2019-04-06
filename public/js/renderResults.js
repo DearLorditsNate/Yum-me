@@ -54,6 +54,7 @@ $(document).ready(function () {
 
     //save a favorite
     $('.save-fave').on('click', function (event) {
+        
         event.preventDefault();
         var data = {
             name: $(this).attr("data-name"),
@@ -220,6 +221,8 @@ $(document).ready(function () {
 
     });
 
+    //update saved recipe
+    //=========================
     $(document).on('click', '.save-updates', function () {
         event.preventDefault();
         var data = {
@@ -252,4 +255,6 @@ $(document).ready(function () {
         $(".edit-input").removeClass("inline-edit-styling");
 
     });
+    //==========================
+ 
 });
