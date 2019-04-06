@@ -233,7 +233,7 @@ $(document).ready(function () {
                 console.log("User created")
                 console.log(response)
             });
-        }, 2000);
+        }, 4000);
 
     });
 
