@@ -225,12 +225,10 @@ $(document).ready(function () {
     //=========================
     $(document).on('click', '.save-updates', function () {
         event.preventDefault();
+        var id = $(this).attr('data-id');
         var data = {
-            id: $(this).attr('data-id'),
-            instructions: $("#instructions-update").text().trim(),
-            ingredientName: $("#ingredients-update").text().trim(),
-            ingredientMeasure: "something",
-            comment: $("#full-view-comments").text().trim()
+            id: id,
+            comment: $("[data-id-comment=" + id + "]").text().trim()
         }
 
         console.log(data);
