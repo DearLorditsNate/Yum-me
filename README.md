@@ -1,19 +1,19 @@
 # Yum-me
-A fully RESTful web application that allows users to search, save, edit, create and delete recipes. Yum(me) is the new age equivalent of a personalized cookbook! 
+A fully RESTful web application that allows users to search, save, edit, create and delete recipes. Yum(me) is the new age equivalent of a personalized cookbook!
 
 <strong>Video Demonstration:</strong>
-<strong>Heroku Link:</strong>
+<strong>Heroku Link:</strong> https://yumme.herokuapp.com/
   
 ## Set-Up
 Yum(me)! relies heavily on NPM packages! After running `npm init -y` &mdash; to initialize the `package.json` file &mdash; proceed installing all of the following node packages:
 
 ### Node packages
 
+  * [DotEnv](https://www.npmjs.com/package/dotenv)
+  
   * [Axios](https://www.npmjs.com/package/axios)
 
   * [Express](https://www.npmjs.com/package/express)
-
-  * [DotEnv](https://www.npmjs.com/package/dotenv)
 
   * [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
   
@@ -21,9 +21,9 @@ Yum(me)! relies heavily on NPM packages! After running `npm init -y` &mdash; to 
   
   * [mysql2](https://www.npmjs.com/package/mysql2)
   
-  * [path](https://www.npmjs.com/package/path)
-  
   * [sequelize](https://www.npmjs.com/package/sequelize)
+  
+  * [path](https://www.npmjs.com/package/path)
   
 ### Technologies Used
 - `Node` and `Express` Web Server
@@ -45,7 +45,7 @@ node_modules
 ```
 
 ### `.env`
-`.env` holds the values of my API keys and is used by the `dotenv` package to set the environment variables to the global `process.env` object in node. These are values specific to the computer on which node runs. External users will need to obtain their own spotify API key and create their own `.env` file.
+`.env` holds the values of our `Firebase` API key and is used by the `dotenv` package to set the environment variables to the global `process.env` object in node. These are values specific to the computer on which node runs. External users will need to obtain their own `Firebase` API key and create their own `.env` file.
 
 ```keys.js
 # Firebase API keys
@@ -55,6 +55,9 @@ exports.firebase_api_key = {
 }
 
 ```
+
+### `models`
+
 ## Primary Functionalities of <em>Yum(me)!</em>
 - <strong>AJAX call:</strong> Pulls the value from the "search" term input and queries the mealdb API. The appropriate response object data is selected and then dynamically added as `data-attributes` to the `<a>` tag surrounding "Save to Favorites."
 
@@ -62,12 +65,16 @@ exports.firebase_api_key = {
 
 - <strong>GET request</strong> - When a user logs in, all their saved recipes automatically appear on their Favorites page. This information is selected via their unique Firebase User ID from the `User` table.
 
-- <strong>Input Sanitization</strong> - We have minor input validations
+- <strong>PUT Request </strong> - When a user adds comments to a saved recipe, the added comments are saved in the database. Upon reopening this saved recipe, they will be able to see all their comments!
+
+- <strong>DELETE Request </strong> - A user has the ability to delete one of their favorite recipes.
+
+- <strong>Input Validation</strong> - While minor at this time, if a user does not enter a search term, a notification will appear requesting they please enter a search term. 
 
 ### Future Development
 - <strong>Database Efficiency</strong> - At this time, ingredients and measurements are each stored in strings which means we have duplicates! To be scalable, we would need to store each ingredient and each measurement once and then use foreign keys to access the correct data. 
 
-- <strong>Improved Input Sanitization</strong> - This will eventually include the functionality of updating ingredients, measurements, and instructions in the "View Full" modal on the Favorites page.
+- <strong>Improved Input Sanitization</strong> - This will eventually include the functionality of updating ingredients, measurements, and instructions in the "View Full" modal on the Favorites page. Additionally, when a user creates a recipe, we need to ensure that specific special characters are not allowed or more than one ingredient and measurement per space. It is critical that as the database structure changes so does the logic storing and retrieving information.
 
 - <strong>Reduce Data</strong> - At this time there are no constraints on the number of results rendered to the page. Additionally, each card contains all requisite response object data `==` limitless data could be send to the page! Not good. Ideally, we would love to limit to 3 -5 results and then include a "Next" button in the bottom right corner. Furthermore, this will also create a nicer user experience because they will not be overwhelmed with results, exhausted from choosing, and then being unstaisfied because they weren't sure if they picked the right one! #paradoxofchoice The user will be pleased with a few options, be energized by their easy choice, and then be even more atisfied with it as they start cooking and eating!
 
@@ -81,28 +88,45 @@ recipe, or have the option to filter alphabetically, date saved, or with a possi
 - <strong>Mobile App</strong>
 
 <hr>
-## The Creators
 
-### [Nate Micinski]()
-- Primary Contributions:
-- Team Strengths:
-- Favorite Aspect:
-- What I learned: "<em>insert what you learned throught his project!<em>"
+# The Creators
 
-### [Hanna Lauth]()
-- Primary Contributions:
-- Team Strengths:
-- Favorite Aspect: The "View Full" modal is my favorite feature!
-- What I learned: "<em>That both Bootstrap and Materialize have particular functionality when it comes to buttons and input fields... you must click on the exact right spot for it to work! We spent a good 4 hours trying to figure out why I couldn't log in or sign up on the deployed heroku app from my computer... come to find out I only needed to click exactly on the text and wait 2 seconds - BOOM! Signed In. On a more technical note, I learned about pulling user input from multiple input fields simuntaneously, furthered my understanding and comfortability with `CRUD`, `back-end`, and jQuery/JavaScript, learned how to make HTML elements editable (`contentedible`), and became best friends with Modals, GitHub and Bash.<em> "
+### [Nate Micinski](https://github.com/DearLorditsNate)
+- <strong>Primary Contributions:</strong> Back end routing, `req.body` parseing
+- <strong>Team Strengths:</strong>
+  * Strength 1
+  * Strength 2
+- <strong>Favorite Aspect:</strong>
+> "It's my favorite!"
+- <strong>What I learned:</strong> 
+> "<em>I learned something!<em>"
+
+### [Hanna Lauth](https://github.com/hmlauth?tab=following)
+- <strong>Primary Contributions:</strong> Front-End Design and Functionality including `Express.Handlebars` views, `View Full` and `Create Your Own Recipe` design and functionalities, Mobile-Responsiveness, README.md
+- <strong>Team Strengths:</strong>
+  * Strength 1
+  * Strength 2
+- <strong>Favorite Aspect:</strong> 
+> "The "View Full" modal is my favorite feature!"
+- <strong>What I learned:</strong> 
+> "<em>That both Bootstrap and Materialize have particular functionality when it comes to buttons and input fields... you must click on the exact right spot for it to work! We spent a good 4 hours trying to figure out why I couldn't log in or sign up on the deployed heroku app from my computer... come to find out I only needed to click exactly on the text and wait 2 seconds - BOOM! Signed In. On a more technical note, I learned about pulling user input from multiple input fields simuntaneously, furthered my understanding and comfortability with `CRUD`, `back-end`, and jQuery/JavaScript, learned how to make HTML elements editable (`contentedible`), and became best friends with Modals, GitHub and Bash.<em> "
   
-### [Mike Wilkenson]()
-- Primary Contributions: Firebase User Authentication
-- Team Strengths:
-- Favorite Aspect:
-- What I learned: "<em>insert what you learned throught his project!<em>"
+### [Mike Wilkenson](https://github.com/MichaelWilkens)
+- <strong>Primary Contributions:</strong> `Firebase` User Authentication, `Recipe` and `User` Models, 
+- <strong>Team Strengths:</strong>
+  * Strength 1
+  * Strength 2
+- <strong>Favorite Aspect:</strong>
+> "It's my favorite!"
+- <strong>What I learned:</strong> 
+> "<em>I learned something!<em>"
 
-### [Jenn Goldman]()
-- Primary Contributions: 
-- Team Strengths:
-- Favorite Aspect:
-- What I learned: "<em>insert what you learned throught his project!<em>"
+### [Jenn Goldman](https://github.com/jenngoldman)
+- <strong>Primary Contributions:</strong> Front-End Design including `Main` & `About Us` views, Photography, Mobile-Responsiveness, Color Palette
+- <strong>Team Strengths:</strong>
+  * Strength 1
+  * Strength 2
+- <strong>Favorite Aspect:</strong>
+> "It's my favorite!"
+- <strong>What I learned:</strong> 
+> "<em>I learned something!<em>"
