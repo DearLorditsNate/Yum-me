@@ -44,20 +44,6 @@ node_modules
 .env
 ```
 
-### `.env`
-`.env` holds the values of our `Firebase` API key and is used by the `dotenv` package to set the environment variables to the global `process.env` object in node. These are values specific to the computer on which node runs. External users will need to obtain their own `Firebase` API key and create their own `.env` file.
-
-```keys.js
-# Firebase API keys
-
-exports.firebase_api_key = {
-    password: process.env.api_key
-}
-
-```
-
-### `models`
-
 ## Primary Functionalities of <em>Yum(me)!</em>
 - <strong>AJAX call:</strong> Pulls the value from the "search" term input and queries the mealdb API. The appropriate response object data is selected and then dynamically added as `data-attributes` to the `<a>` tag surrounding "Save to Favorites."
 
