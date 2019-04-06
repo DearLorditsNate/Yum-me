@@ -16,6 +16,7 @@ module.exports = function (app) {
         });
     });
   
+    // Get logged-in users's saved recipes
     app.get('/favorites/:id', function (req, res) {
         db.Recipe.findAll({ where: { firebaseID: req.params.id } }).then(function (recipes) {
             for(var i = 0; i < recipes.length; i++) {
@@ -60,6 +61,19 @@ module.exports = function (app) {
         });
     });
 
+    // Updated saved recipe
+    app.put('/api/update', function (req, res) {
+        db.Recipe.update(
+            req.body,
+            {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function (response) {
+                res.json(response);
+            });
+    });
+
     //create new user with sign up form
     app.post('/api/newUser', function (req, res) {
         db.User.create({
@@ -83,18 +97,5 @@ module.exports = function (app) {
         }).then(function (response) {
             res.json(response);
         });
-    });
-
-    // Updated saved recipe
-    app.put('/api/update', function (req, res) {
-        db.Recipe.update(
-            req.body,
-            {
-                where: {
-                    id: req.body.id
-                }
-            }).then(function (response) {
-                res.json(response);
-            });
     });
 }

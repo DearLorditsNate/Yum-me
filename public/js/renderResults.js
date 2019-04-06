@@ -137,6 +137,55 @@ $(document).ready(function () {
         window.location = '/api/delete?id=' + id + "&fb_id=" + uid;
     });
 
+        //update recipe
+    $(document).on('click', '.update-recipe', function () {
+        event.preventDefault();
+        var $button = $(".update-recipe");
+        $button.text("Save Updates");
+        $button.removeClass("update-recipe").addClass("save-updates");
+
+        var $input = $(".edit-input").attr('contenteditable');
+        if ($input === "false") {
+            $(".edit-input").attr('contenteditable', 'true');
+        }
+        $(".edit-input").addClass("inline-edit-styling");
+
+    });
+
+    //update saved recipe
+    //=========================
+    $(document).on('click', '.save-updates', function () {
+        event.preventDefault();
+        var id = $(this).attr('data-id');
+        var data = {
+            id: id,
+            comment: $("[data-id-comment=" + id + "]").text().trim()
+        }
+
+        console.log(data);
+
+        $.ajax({
+            url: "/api/update",
+            type: "PUT",
+            data: data
+        }).then(function (response) {
+            console.log(response);
+        });
+
+        var $button = $(".save-updates");
+        $button.text("Update Recipe");
+        $button.removeClass("save-updates").addClass("update-recipe");
+
+        var $stopInput = $(".edit-input").attr('contenteditable');
+        if ($stopInput === "true") {
+            $(".edit-input").attr('contenteditable', 'false');
+        }
+
+        $(".edit-input").removeClass("inline-edit-styling");
+
+    });
+    //==========================
+
     //load saved pages with dynamic user id parameter
     $('#saved').on('click', function () {
         window.location = '/favorites/' + uid;
@@ -205,54 +254,4 @@ $(document).ready(function () {
             }
         }, 2000)
     })
-
-    //update recipe
-    $(document).on('click', '.update-recipe', function () {
-        event.preventDefault();
-        var $button = $(".update-recipe");
-        $button.text("Save Updates");
-        $button.removeClass("update-recipe").addClass("save-updates");
-
-        var $input = $(".edit-input").attr('contenteditable');
-        if ($input === "false") {
-            $(".edit-input").attr('contenteditable', 'true');
-        }
-        $(".edit-input").addClass("inline-edit-styling");
-
-    });
-
-    //update saved recipe
-    //=========================
-    $(document).on('click', '.save-updates', function () {
-        event.preventDefault();
-        var id = $(this).attr('data-id');
-        var data = {
-            id: id,
-            comment: $("[data-id-comment=" + id + "]").text().trim()
-        }
-
-        console.log(data);
-
-        $.ajax({
-            url: "/api/update",
-            type: "PUT",
-            data: data
-        }).then(function (response) {
-            console.log(response);
-        });
-
-        var $button = $(".save-updates");
-        $button.text("Update Recipe");
-        $button.removeClass("save-updates").addClass("update-recipe");
-
-        var $stopInput = $(".edit-input").attr('contenteditable');
-        if ($stopInput === "true") {
-            $(".edit-input").attr('contenteditable', 'false');
-        }
-
-        $(".edit-input").removeClass("inline-edit-styling");
-
-    });
-    //==========================
- 
 });
