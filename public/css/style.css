@@ -1,8 +1,11 @@
+html {
+    height: 100%;
+}
+
 body {
     background-image: url("../images/blueberries-clear-version.jpg");
     background-repeat: no-repeat;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background-position:center;
     background-size: cover;
     max-width: 100%;
     z-index: -1;
@@ -29,8 +32,12 @@ body {
     position: fixed;
     width: 100%;
     z-index: 1;
-    height: 50px;
     box-shadow: 0 4px 8px 0 #7b66634a, 0 6px 20px 0 #7b66634a;
+}
+
+.fixed-top {
+    position: relative;
+    width: 100%;
 }
 
 .nav-right {
@@ -38,6 +45,7 @@ body {
 }
 
 .nav-left, .nav-right {
+    margin-bottom: 0px;
     padding: 0px;
     list-style: none;
     display: inline-flex;
@@ -82,6 +90,11 @@ body {
 
 #creators {
     margin-top: 50px;
+}
+
+.creator-img {
+    width: 150px;
+    height: 150px;
 }
 
 /* Home page view */
