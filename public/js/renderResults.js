@@ -104,6 +104,13 @@ $(document).ready(function () {
             return $(elem).val().trim();
         }).get();
 
+        var $name = $('#name').val().trim();
+        
+        var $img = $('#photo').val().trim();
+        if ($img === "") {
+            $img = 'https://images.pexels.com/photos/45908/blueberry-fruit-blue-45908.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+        }
+
         var $comment = $('#comments').val().trim();
 
         $ingredients = $ingredients.toString();
@@ -113,8 +120,8 @@ $(document).ready(function () {
 
         event.preventDefault();
         var data = {
-            name: $('#name').val(),
-            image: $('#photo').val(),
+            name: $name,
+            image: $img,
             instructions: $instructions,
             ingredientName: $ingredients,
             ingredientMeasure: $measurements,
