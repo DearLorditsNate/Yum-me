@@ -124,9 +124,9 @@ recipe, or have the option to filter alphabetically, date saved, or with a possi
 ### [Jenn Goldman](https://github.com/jenngoldman)
 - <strong>Primary Contributions:</strong> Front-End Design including `Main` & `About Us` views, Photography, Mobile-Responsiveness, Color Palette
 - <strong>Team Strengths:</strong>
-  * Strength 1
-  * Strength 2
+  * Front End
+  * CSS
 - <strong>Favorite Aspect:</strong>
-> "It's my favorite!"
+> My team <3 
 - <strong>What I learned:</strong> 
-> "<em>I learned something!<em>"
+> "<em>Finally mastered the development workflow of GitHub in regards to creating branches and pull requests! Also, gained more familiarity with Handlebars.<em>"
