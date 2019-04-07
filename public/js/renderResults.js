@@ -108,7 +108,7 @@ $(document).ready(function () {
         
         var $img = $('#photo').val().trim();
         if ($img === "") {
-            $img = 'https://images.pexels.com/photos/45908/blueberry-fruit-blue-45908.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+            $img = 'https://images.pexels.com/photos/988870/pexels-photo-988870.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
         }
 
         var $comment = $('#comments').val().trim();
