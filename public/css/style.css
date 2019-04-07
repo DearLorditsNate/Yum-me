@@ -195,7 +195,8 @@ body {
 
     #full-view-heading {
         display: flex;
-        justify-content: center
+        justify-content: center;
+        text-align: center;
     }
     
     #full-view-image {
@@ -206,9 +207,10 @@ body {
     }
 
     #full-view-img-row {
-        display: flex;
+        display: grid;
         justify-content: center;
         margin: 10px;
+
     }
 
     .modify-recipe-button {
