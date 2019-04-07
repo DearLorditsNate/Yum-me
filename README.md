@@ -1,8 +1,8 @@
 # Yum-me
 A fully RESTful web application that allows users to search, save, edit, create and delete recipes. Yum(me) is the new age equivalent of a personalized cookbook!
 
-<strong>Video Demonstration:</strong> [YouTube](https://www.youtube.com/watch?v=_Ocab5w_6NU&feature=youtu.be)
-<strong>Website Live:</strong> [yumme.recipes](http://www.yumme.recipes/)
+<strong>Video Demonstration:</strong> [YouTube](https://www.youtube.com/watch?v=_Ocab5w_6NU&feature=youtu.be) <br>
+<strong>Website Live:</strong> [yumme.recipes](http://www.yumme.recipes/) <br>
 <strong>Heroku Link:</strong> [https://yumme.herokuapp.com/](https://yumme.herokuapp.com/)
   
 ## Set-Up
