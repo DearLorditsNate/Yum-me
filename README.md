@@ -1,8 +1,9 @@
 # Yum-me
 A fully RESTful web application that allows users to search, save, edit, create and delete recipes. Yum(me) is the new age equivalent of a personalized cookbook!
 
-<strong>Video Demonstration:</strong>
-<strong>Heroku Link:</strong> https://yumme.herokuapp.com/
+<strong>Video Demonstration:</strong> [YouTube](https://www.youtube.com/watch?v=_Ocab5w_6NU&feature=youtu.be)
+<strong>Website Live:</strong> [yumme.recipes](http://www.yumme.recipes/)
+<strong>Heroku Link:</strong> [https://yumme.herokuapp.com/](https://yumme.herokuapp.com/)
   
 ## Set-Up
 Yum(me)! relies heavily on NPM packages! After running `npm init -y` &mdash; to initialize the `package.json` file &mdash; proceed installing all of the following node packages:
@@ -66,7 +67,9 @@ node_modules
 
 - <strong>Better API for Search Page</strong> - The current api used for the Search page is very limited in the number and variety of recipes with only about 200 recipes to search through.
 
-- <strong>Filter Recipes on Favorites Page</strong> - Add functionality to the Favorites page where in users could search by ingredient, cuisine or name of recipe, or have the option to filter alphabetically, date saved, or with a possible ranking feature. We could even include a "Top 5" most used.
+- <strong>Filter Recipes on Favorites Page</strong> - Add functionality to the Favorites page where in users could search by ingredient, cuisine or name of recipe, or have the option to filter alphabetically, date saved, or with a possible ranking feature. We could even include a "Top 5" most used. This could include creating different "cookbook" profiles, or print recipes to a physical cookbook (long-term).
+
+- <strong>Shared Accounts</strong> - Families could have accounts together for sharing family recipes!
 
 - <strong>Social Commenting and Sharing</strong>
 
@@ -77,41 +80,49 @@ node_modules
 # The Creators
 
 ### [Nate Micinski](https://github.com/DearLorditsNate)
-- <strong>Primary Contributions:</strong> Back end routing, `req.body` parseing
-- <strong>Team Strengths:</strong>
-  * Strength 1
-  * Strength 2
+- <strong>Primary Contributions:</strong> Back end routing, JavaScript logic, Database Storage
+- <strong>Soft Skills:</strong>
+  * Leader
+  * Distilling complex ideas
+  * Enthusiasm & Communication
+  * Presenting
+  * Time Management
 - <strong>Favorite Aspect:</strong>
-> "It's my favorite!"
+> "`Create Your Own Recipe` functionality!"
 - <strong>What I learned:</strong> 
-> "<em>I learned something!<em>"
+> "<em>I learned a lot about building an MVC file structure and creating RESTful route conventions.<em>"
 
 ### [Hanna Lauth](https://github.com/hmlauth?tab=following)
 - <strong>Primary Contributions:</strong> Front-End Design and Functionality including `Express.Handlebars` views, `View Full` and `Create Your Own Recipe` design and functionalities, Mobile-Responsiveness, README.md
-- <strong>Team Strengths:</strong>
-  * Strength 1
-  * Strength 2
+- <strong>Soft Skills:</strong>
+  * Leader
+  * Presenting
+  * Team Collaboration 
+  * Planning & Time Management
+  * Big Picture Conceptualization & Visualization
+  * Ethusiasm & Communication 
 - <strong>Favorite Aspect:</strong> 
-> "The "View Full" modal is my favorite feature!"
+> "The `View Full` modal and `Create Your Own Recipe` are my favorite features!"
 - <strong>What I learned:</strong> 
-> "<em>That both Bootstrap and Materialize have particular functionality when it comes to buttons and input fields... you must click on the exact right spot for it to work! We spent a good 4 hours trying to figure out why I couldn't log in or sign up on the deployed heroku app from my computer... come to find out I only needed to click exactly on the text and wait 2 seconds - BOOM! Signed In. On a more technical note, I learned about pulling user input from multiple input fields simuntaneously, furthered my understanding and comfortability with `CRUD`, `back-end`, and jQuery/JavaScript, learned how to make HTML elements editable (`contentedible`), and became best friends with Modals, GitHub and Bash.<em> "
+> "<em>That both Bootstrap and Materialize have particular functionality when it comes to buttons and input fields... you must click on the exact right spot for it to work! We spent a good 4 hours trying to figure out why I couldn't log in or sign up on the deployed heroku app from my computer... come to find out I only needed to click exactly on the text and wait 2 seconds - BOOM! Signed In. On a more technical note, I learned about pulling user input from multiple input fields simuntaneously, furthered my understanding and comfortability with `CRUD`, `back-end`, and jQuery/JavaScript, learned how to make HTML elements editable (`contentedible`), and became best friends with Modals, GitHub, Bash, and Slack Channel threads.<em> "
   
 ### [Mike Wilkenson](https://github.com/MichaelWilkens)
 - <strong>Primary Contributions:</strong> `Firebase` User Authentication, `Recipe` and `User` Models, 
-- <strong>Team Strengths:</strong>
-  * Strength 1
-  * Strength 2
+- <strong>Soft Skills:</strong>
+  * Eagerly embraces challenges
+  * Communication & Teamwork
+  * Presenting
 - <strong>Favorite Aspect:</strong>
-> "It's my favorite!"
+> "Personalized greetings based on Firebase uid"
 - <strong>What I learned:</strong> 
-> "<em>I learned something!<em>"
+> "<em>I became much more proficient with GitHub deployment and resolving merge conflicts. I also learned about user authentication with a third party user base.<em>"
 
 ### [Jenn Goldman](https://github.com/jenngoldman)
 - <strong>Primary Contributions:</strong> Front-End Design including `Main` & `About Us` views, Photography, Mobile-Responsiveness, Color Palette
-- <strong>Team Strengths:</strong>
-  * Front End
-  * CSS
+- <strong>Soft Skills:</strong>
+  * Communication & Teamwork
+  * Research
 - <strong>Favorite Aspect:</strong>
 > My team <3 
 - <strong>What I learned:</strong> 
-> "<em>Finally mastered the development workflow of GitHub in regards to creating branches and pull requests! Also, gained more familiarity with Handlebars.<em>"
+> "<em>Finally mastered the development workflow of GitHub in regards to creating branches and pull requests! Also, gained more familiarity with `Express.Handlebars.`<em>"
