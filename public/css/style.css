@@ -1,14 +1,13 @@
-html {
+/* html { */
     /* height: 100%; */
-}
+/* } */
 
 body {
     height: 100%;
     background-image: url("../images/blueberries-clear-version.jpg");
     background-repeat: no-repeat;
-    background-position:center;
+    background-attachment: fixed;
     background-size: cover;
-    max-width: 100%;
     z-index: -1;
     font-family: 'Josefin Sans', sans-serif;
 };
@@ -391,7 +390,7 @@ hr {
     .nav-right {
         float: none;
     }
-    
+
     #nav-container {
         text-align: center;
     }
