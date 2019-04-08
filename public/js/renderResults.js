@@ -108,7 +108,7 @@ $(document).ready(function () {
         
         var $img = $('#photo').val().trim();
         if ($img === "") {
-            $img = 'https://images.pexels.com/photos/988870/pexels-photo-988870.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+            $img = 'https://www.momlovesbaking.com/wp-content/uploads/2015/05/Orange-Blueberry-Gluten-Free-Muffins-square.jpg'
         }
 
         var $comment = $('#comments').val().trim();
