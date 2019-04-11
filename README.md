@@ -69,6 +69,8 @@ node_modules
 
 - <strong>Filter Recipes on Favorites Page</strong> - Add functionality to the Favorites page where in users could search by ingredient, cuisine or name of recipe, or have the option to filter alphabetically, date saved, or with a possible ranking feature. We could even include a "Top 5" most used. This could include creating different "cookbook" profiles, or print recipes to a physical cookbook (long-term).
 
+- <strong>Improved UI/UX</strong> Most improvements are apparent after watching users try our application for the first time! The full value of our main concept - the ability to save "any recipe," update it and add comments to it, and also create your own recipes - is not realized within the first 30 seconds of signing up. This is a huge deal! One way we can correct this is to reconsider the flow of our design in addition to where design elements are placed and emphasized both in a laptop and mobile experience.
+
 - <strong>Shared Accounts</strong> - Families could have accounts together for sharing family recipes!
 
 - <strong>Social Commenting and Sharing</strong>
